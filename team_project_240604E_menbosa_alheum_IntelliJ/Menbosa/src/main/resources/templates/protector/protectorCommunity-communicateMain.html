@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-소통</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- communicateMain -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-communicateMain.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+<main>
+  <h2 class="protectorCommunity-communicate-title">소통</h2>
+  <ul class="protectorCommunity-communicate-tabMenu">
+    <li><a th:href="@{/alheum/community/main}" >공지</a></li>
+    <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
+    <li><a th:href="@{/alheum/community/postMain}">시설후기</a></li>
+    <li><a th:href="@{/alheum/community/commuQuestion}">자주하는 질문</a></li>
+  </ul>
+<!--  <div class="protectorCommunity-communicate-searchbar">-->
+<!--    <form action="" method="">-->
+<!--      <input type="text" name="searchKeyWord"  placeholder="검색어를 입력하세요">-->
+<!--      <button>검색</button>-->
+<!--    </form>-->
+<!--  </div>-->
+  <div class="protectorCommunity-communicate-notice">
+    <p class="protectorCommunity-communicate-notice-title">
+      <span>순번</span>
+      <span>제목</span>
+      <span>등록자명</span>
+      <span>등록일</span>
+    </p>
+    <ul>
+      <li th:each="commuList : ${commuList}">
+        <span th:text="${commuList.boardCommuNum}"></span>
+        <a th:text="${commuList.boardCommuTitle}" th:href="@{/alheum/community/commuDetails(boardCommuNum=${commuList.boardCommuNum})}"></a>
+        <span th:text="${commuList.proMemName}"></span>
+        <span th:text="${commuList.boardCommuDate}"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="protectorCommunity-communicate-writeButton">
+    <a th:href="@{/alheum/community/commuWrite}">글쓰기</a>
+  </div>
+
+  <!-- 페이징 처리 -->
+  <div class="page-container">
+    <ul class="page-box">
+      <a th:href="@{/alheum/community/commuMain(page=${page.startPage - 1})}" class="page-a" th:if="${page.prev}">
+        <li class="page-num prev"> &lt </li>
+      </a>
+
+      <!--        th:block은 화면에 영향을 주지않는 가짜 태그
+                  타임리프 문법을 사용하기 위해 만들어 쓴다.
+      -->
+      <th:block th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+        <a th:href="@{/alheum/community/commuMain(page=${i})}" class="page-a">
+          <li class="page-num" th:classappend="${i == page.criteria.page ? 'active' : ''}" th:text="${i}"></li>
+        </a>
+      </th:block>
+
+      <a th:href="@{/alheum/community/commuMain(page=${page.endPage + 1})}" class="page-a" th:if="${page.next}">
+        <li class="page-num next"> &gt </li>
+      </a>
+    </ul>
+  </div>
+
+
+</main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

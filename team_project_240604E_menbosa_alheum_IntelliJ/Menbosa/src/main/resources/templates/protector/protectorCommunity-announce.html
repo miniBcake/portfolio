@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-공지</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- announce CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-announce.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+<main>
+  <h2 class="protectorCommunity-announce-title">공지</h2>
+  <ul class="protectorCommunity-announce-tabMenu">
+    <li><a th:href="@{/alheum/community/main}">공지</a></li>
+    <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
+    <li><a th:href="@{/alheum/community/postMain}">시설후기</a></li>
+    <li><a th:href="@{/alheum/community/commuQuestion}">자주하는 질문</a></li>
+  </ul>
+  <div class="protectorCommunity-announce-notice">
+    <p class="protectorCommunity-announce-notice-title">
+      <span>순번</span>
+      <span>제목</span>
+      <!--        <span>등록자명</span>-->
+      <span>등록일</span>
+    </p>
+    <ul>
+      <li th:each = "mainData : ${mainList}">
+        <span th:text = '${mainData.announceNum}'></span>
+        <a th:text='${mainData.announceTitle}'
+           th:href="@{/alheum/community/mainDetails(announceNum=${mainData.announceNum})}"></a>
+        <!--          <span>관리자</span>-->
+        <span th:text = '${mainData.announceDate}'></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 페이징 처리 -->
+  <div class="page-container">
+    <ul class="page-box">
+      <a th:href="@{/alheum/community/main(page=${page.startPage - 1})}" class="page-a" th:if="${page.prev}">
+        <li class="page-num prev"> &lt </li>
+      </a>
+      <th:block th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+        <a th:href="@{/alheum/community/main(page=${i})}" class="page-a">
+          <li class="page-num" th:classappend="${i == page.criteria.page ? 'active' : ''}" th:text="${i}"></li>
+        </a>
+      </th:block>
+
+      <a th:href="@{/alheum/community/main(page=${page.endPage + 1})}" class="page-a" th:if="${page.next}">
+        <li class="page-num next"> &gt </li>
+      </a>
+    </ul>
+  </div>
+  <!--  <div class="protectorCommunity-announce-pageButton">-->
+  <!--    <span>1</span>-->
+  <!--    <span>2</span>-->
+  <!--    <span>3</span>-->
+  <!--    <span>4</span>-->
+  <!--    <span>5</span>-->
+  <!--  </div>-->
+</main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+/* 기본 설정 */
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 회원가입 */
+.protectorJoin-title {
+  width: 970px;
+  margin: auto;
+  text-align: center;
+}
+
+.protectorJoin-title p {
+  color: var(--color-main);
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.protectorJoin-main {
+  width: 500px;
+  height: 800px;
+  margin: 30px auto 200px auto;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: inset 1px 1px 3px 1px rgba(0.15, 0.15, 0.15, 0.15);
+}
+
+.protectorJoin-main form {
+  width: 400px;
+  margin: auto;
+  position: relative;
+  top: 40px;
+}
+
+.protectorJoin-nameTitle {
+  color: var(--color-main);
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.protectorJoin-name {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px 0;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.protectorJoin-phone button:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
+}
+
+.protectorJoin-number {
+  width: 100px;
+  height: 50px;
+  margin: 0 5px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-phone button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--color-main);
+  color: white;
+  font-size: 14px;
+}
+
+.protectorJoin-inputNumber {
+  width: 400px;
+  height: 50px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-password {
+  width: 400px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-passwordVerify {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-email {
+  width: 400px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorJoin-checkbox p {
+  color: var(--color-main);
+  font-size: 20px;
+}
+
+.protectorJoin-checkboxAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.protectorJoin-checkCnt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+.protectorJoin-checkCnt p {
+  font-size: 15px;
+}
+
+.protectorJoin-checked {
+  width: 20px;
+  height: 20px;
+}
+
+.protectorJoin-check {
+  width: 15px;
+  height: 15px;
+}
+
+.protectorJoin-submit button {
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--color-main);
+  color: white;
+  margin-top: 20px;
+}
+
+.protectorJoin-submit button:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
+}

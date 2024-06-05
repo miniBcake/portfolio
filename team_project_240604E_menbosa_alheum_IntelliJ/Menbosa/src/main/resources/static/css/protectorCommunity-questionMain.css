@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  /* 텍스트긁기 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
+}
+
+/* 자주하는 질문 */
+.protectorCommunity-question-title{
+  text-align: center;
+  font-size: 32px;
+  margin: 20px auto 40px;
+  font-weight: 500;
+}
+
+
+/* 커뮤니티 탭메뉴 */
+
+.protectorCommunity-question-tabMenu{
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.protectorCommunity-question-tabMenu > li{
+
+  border: 1px solid  #E2E2E2;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.protectorCommunity-question-tabMenu > li > a{
+  display: block;
+  width: 100%;
+  font-size: 20px;
+}
+
+
+.protectorCommunity-question-tabMenu > li:nth-of-type(4){
+  background-color: var(--color-main);
+  color: white;
+}
+
+.protectorCommunity-question-tabMenu > li:nth-of-type(4) > a{
+  color: white;
+}
+
+/* 질문사항들 */
+
+.protectorCommunity-question-list{
+  border-top: 2px solid black;
+}
+
+.protectorCommunity-question-list > li{
+  border-bottom: 1px solid var(--color-disabled);
+}
+
+.question{
+  padding: 40px;
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.question-title > span{
+  font-size: 24px;
+}
+
+.question-q{
+  margin-right: 31px;
+}
+
+.downButton{
+  transition: 0.5s ease;
+}
+
+.answer{
+  background-color: #f6f6f6;
+  /* padding: 40px; */
+  transition:max-height 0.5s ease;
+  display: flex;
+  align-items: center;
+  max-height: 0px;
+  overflow: hidden;
+  padding: 0 42px;
+  height: 110px;
+}
+
+.answer-a{
+  font-size: 24px;
+  margin-right: 40px;
+}
+
+
+.view{
+  max-height: 100px;
+  
+}
+
+.rotate{
+  transform: rotate(-180deg);
+}

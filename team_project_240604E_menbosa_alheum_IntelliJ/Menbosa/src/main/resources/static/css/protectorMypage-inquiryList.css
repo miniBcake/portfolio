@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  /* 텍스트긁기 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
+}
+
+/* 공지 */
+.protectorMypage-inquiry-title{
+  text-align: center;
+  font-size: 32px;
+  margin: 20px auto 40px;
+  font-weight: 500;
+}
+
+
+/* 커뮤니티 탭메뉴 */
+
+.protectorMypage-inquiry-tabMenu{
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.protectorMypage-inquiry-tabMenu > li{
+
+  border: 1px solid  #E2E2E2;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.protectorMypage-inquiry-tabMenu > li > a{
+  display: block;
+  width: 100%;
+  font-size: 20px;
+}
+
+
+.protectorMypage-inquiry-tabMenu > li:nth-of-type(1){
+  background-color: #FE7A15;
+  color: white;
+}
+
+.protectorMypage-inquiry-tabMenu > li:nth-of-type(1) > a{
+  color: white;
+}
+
+/* 리스트 전체 */
+.protectorMypage-inquiry-notice{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+
+/* 리스트에 순번, 제목, 등록자명, 등록일 부분 */
+.protectorMypage-inquiry-notice-title{
+  background-color: #D0D0D0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  
+}
+
+.protectorMypage-inquiry-notice-title > span{
+  padding: 0 40px;
+  border-right: 1px solid white;
+}
+
+.protectorMypage-inquiry-notice-title > span:nth-of-type(2){
+  width: 500px;
+}
+
+.protectorMypage-inquiry-notice-title > span:nth-of-type(4){
+  border: none;
+}
+
+/* 리스트 목록 */
+.protectorMypage-inquiry-notice > ul{
+
+}
+
+.protectorMypage-inquiry-notice > ul > li{
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E2E2E2;
+}
+
+.protectorMypage-inquiry-notice > ul > li > span{
+  padding: 0 20px;
+}
+
+.protectorMypage-inquiry-notice > ul > li > span:nth-of-type(1){
+  padding: 0 30px;
+}
+
+.protectorMypage-inquiry-notice > ul > li > a{
+  width: 500px;
+  padding-right: 45px;
+}
+
+/* 글쓰기 */
+.protectorMypage-inquiry-writeButton{
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.protectorMypage-inquiry-writeButton > a{
+  padding: 10px 40px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(1){
+  background-color: var(--color-disabled);
+  color: #333;
+}
+
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(2){
+  background-color: var(--color-main);
+}
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(1):hover{
+  background-color: #b1b1b1;
+}
+
+/* 페이지 버튼 */
+
+.page-container{
+
+
+}
+
+
+.page-box{
+  display: flex;
+  justify-content: center;
+}
+
+.page-a{
+  padding: 10px;
+}
+
+.active{
+  color: #FE7A15;
+}
+
+
+.protectorMypage-inquiry-writeButton > a:nth-of-type(2):hover{
+  background-color: var(--color-main-hover);
+}
+
+
+/* 페이지 버튼 */
+.protectorMypage-inquiry-pageButton{
+  display: flex;
+  justify-content: center ;
+  margin: 40px auto;
+}
+.protectorMypage-inquiry-pageButton > span{
+  border: 1px solid #D0D0D0;
+  padding: 2px 10px;
+}

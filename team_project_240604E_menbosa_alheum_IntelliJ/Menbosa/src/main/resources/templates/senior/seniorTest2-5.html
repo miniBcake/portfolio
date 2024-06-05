@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorTest2.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script defer th:src="@{/js/seniorTest-modal.js}"></script>
+  <script defer th:src="@{/js/seniorRadioCheck.js}"></script>
+</head>
+<body>
+  <main>
+    <div class="seniorTest-container">
+      <div class="seniorTest-header">
+        <a th:href="@{/alheum/senUser/main}"><img th:src="@{/img/senior-alheum_logo.svg}" alt=""></a>
+        <h1 class="seniorTest-header-title">인지기능검사</h1>
+      </div>
+      <p>5. 나머지 2개와 다른 그림 1개를 찾아주세요</p>
+      <img th:src="@{/img/test2-5.png}" alt="">
+      <form th:action="@{/alheum/senTest/processForm25}" th:method="post">
+        <div class="seniorTest-radioButton">
+          <div>1<input type="radio" name="test2-5-radio" class="test-radio" value="1"></div>
+          <div>2<input type="radio" name="test2-5-radio" class="test-radio" value="0"></div>
+          <div>3<input type="radio" name="test2-5-radio" class="test-radio" value="0"></div>
+          <div>4<input type="radio" name="test2-5-radio" class="test-radio" value="0"></div>
+        </div>
+        <div class="seniorTest-buttons">
+<!--          <div class="seniorTest-button"><button class="back">이전문항</button></div>-->
+          <div class="seniorTest-button"><button type="submit" class="next">검사종료</button></div>
+        </div>
+      </form>
+      <div><p>!! 문항을 제대로 작성하지 않을 경우, 결과의 신뢰도가 떨어집니다.</p></div>
+    </div>
+  </main>
+  <footer></footer>
+  <section class="protector-result-background">
+    <!-- 모달창 흰창 -->
+    <div class="protector-result-modalBox">
+      <div class="protector-result-logoImg"><img th:src="@{/img/senior-alheum_logo.svg}" alt="로고파일"></div>
+      <div>
+        <!-- 결과 버튼처럼 알려줌 -->
+        <div th:each="select : ${selectResult}">
+          <div th:if="${select.testResultScore} >= 4" class="protector-result-colorButtonDiv">양호</div>
+          <div th:if="${select.testResultScore} >= 3 and ${select.testResultScore} < 4 " class="protector-result-colorButtonDiv caution">주의</div>
+          <div th:if="${select.testResultScore} >= 0 and ${select.testResultScore} <= 2" class="protector-result-colorButtonDiv danger">위험</div>
+        </div>
+
+        <!--        <div class="protector-result-colorButtonDiv">양호</div>-->
+        <div class="protector-result-explanation">이전 검사결과는 마이페이지에서 확인하세요!</div>
+      </div>
+      <!-- 마이페이지 또는 시설추천으로 이어지는 버튼 -->
+      <div class="protector-result-movementButton"><a th:href="@{/alheum/senTest/testList}">다시하기</a></div>
+      <!-- 버튼 하단의 홈으로 바로 가는 글씨 -->
+      <div class="protector-result-gohome"><a th:href="@{/alheum/senUser/main}">홈으로 가기</a></div>
+      <p class="protector-result-warningText">이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</p>
+    </div>
+  </section>
+</body>
+</html>

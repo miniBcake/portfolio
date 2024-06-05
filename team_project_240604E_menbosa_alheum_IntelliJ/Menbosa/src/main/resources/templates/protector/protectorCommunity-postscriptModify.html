@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수정하기</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- retouch CSS -->
+  <link rel="stylesheet" href="/css/protectorCommunity-retouch.css">
+  <!-- retouch JS -->
+  <script defer src="/js/protectorCommunity-retouch.js"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <h2>수정하기</h2>
+    <form th:action="@{/alheum/community/postModify(boardRecomNum=${detail.boardRecomNum})}"  method="post" enctype="multipart/form-data">
+      <input type="hidden" name="boardRecomNum" th:value="${detail.boardRecomNum}">
+      <div class="retouch-title">
+        <label for="">제목</label>
+        <input type="text" name="boardRecomTitle" id="" th:value="${detail.boardRecomTitle}" required/>
+      </div>
+      <textarea name="boardRecomContents" id="retouch-content" th:text="${detail.boardRecomContents}" required></textarea>
+      <div class="retouch-inputFile">
+        <span>첨부파일</span>
+        <input type="file" id="modify-file" name="boardFile" accept="image/*" multiple />
+        <button type="button" onclick="deleteFile(this)">삭제</button>
+      </div>
+      <div class="retouch-buttons">
+        <span class="cancel" onclick="back()">취소</span>
+        <button type="submit">작성완료</button>
+      </div>
+    </form>
+  </main>
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

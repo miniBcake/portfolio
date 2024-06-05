@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/seniorTest1.css}"/>
+  <script defer th:src="@{/js/seniorRadioCheck.js}"></script>
+</head>
+<body>
+  <main>
+    <div class="seniorTest-container">
+      <div class="seniorTest-header">
+        <a th:href="@{/alheum/senUser/main}"><img th:src="@{/img/senior-alheum_logo.svg}" alt=""></a>
+        <h1 class="seniorTest-header-title">인지기능검사</h1>
+      </div>
+      <p>1. 포도를 센 후, 몇 송이인지 고르세요</p>
+      <img th:src="@{/img/test1-1.png}" alt="">
+      <form th:action="@{/alheum/senTest/processForm11}" th:method="post">
+        <div class="seniorTest-radioButton">
+          <div>6개<input type="radio" name="test1-1-radio" class="test-radio" value="0"></div>
+          <div>7개<input type="radio" name="test1-1-radio" class="test-radio" value="1"></div>
+          <div>8개<input type="radio" name="test1-1-radio" class="test-radio" value="0"></div>
+          <div>9개<input type="radio" name="test1-1-radio" class="test-radio" value="0"></div>
+        </div>
+        <div class="seniorTest-buttons">
+<!--          <div class="seniorTest-button back"><a href="">이전문항</a></div>-->
+<!--          <div class="seniorTest-button"><button class="back">이전문항</button></div>-->
+<!--          <div class="seniorTest-button next"><a th:href="@{/alheum/senTest/test1-2 }">다음문항</a></div>-->
+          <div class="seniorTest-button"><button type="submit" class="next">다음문항</button></div>
+        </div>
+      </form>
+      <div><p>!! 문항을 제대로 작성하지 않을 경우, 결과의 신뢰도가 떨어집니다.</p></div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

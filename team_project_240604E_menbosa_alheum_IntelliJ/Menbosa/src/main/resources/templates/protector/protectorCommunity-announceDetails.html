@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-공지상세</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- announceDetails CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-announceDetails.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+<main>
+  <div th:each = "mainDetail : ${mainDetail}">
+    <div class="protectorCommunity-announceDetails-title">
+      <div class="title-top">
+        <p>
+          <span>[공지]</span>
+          <span th:text='${mainDetail.announceTitle}'></span>
+        </p>
+      </div>
+      <div class="title-bottom">
+        <!--        <span>작성자</span>-->
+        <span th:text='${#temporals.format(mainDetail.announceDate, "yyyy-MM-dd HH:mm")}'></span>
+      </div>
+    </div>
+
+    <div class="protectorCommunity-announceDetails-content">
+      <p th:text='${mainDetail.announceContents}'></p>
+      <p>
+        <img th:src="@{/img/community-example.png}" alt="">
+      </p>
+    </div>
+  </div>
+
+
+  <div class="protectorCommunity-announceDetails-listButton">
+    <a th:href="@{/alheum/community/main}">목록으로</a>
+  </div>
+</main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+.seniorJoin-container{
+  width: 970px;
+  margin: 0 auto;
+}
+
+.seniorJoin-logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.seniorJoin-logo > img{
+  height: 190px;
+  width: 275px;
+}
+
+.seniorJoin-container > p{
+  font-size: 44px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.seniorJoin-joinBox{
+  height: 1050px;
+  width: 530px;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.seniorJoin-joinBox > p{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.seniorJoin-joinBox > input{
+  font-size: 24px;
+  width: 470px;
+  height: 70px;
+  border: 1px solid #8C8C8C;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding-left: 10px;
+
+}
+
+.seniorJoin-joinBox > input::placeholder{
+  color: #A7A7A7;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > input {
+  font-size: 24px;
+  width: 100px;
+  height: 70px;
+  border: 1px solid #8C8C8C;
+  border-radius: 5px;
+  margin: 0 auto;
+  /* margin-bottom: 30px; */
+  /* padding-left: 10px; */
+  text-align: center;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > span{
+  font-size: 30px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > button{
+  width: 110px;
+  height: 70px;
+  background-color: #DCDCDC;
+  color: white;
+  font-size: 24px;
+  border-radius: 35px;
+  margin-left: 30px;
+}
+
+.seniorJoin-joinBox-seniorPhonenumber-container > input::placeholder{
+  color: #A7A7A7;
+}
+
+#certificationNumber{
+  margin-bottom: 30px;
+}
+
+#seniorJoin-Password{
+  margin-bottom: 20px;
+}
+
+.seniorJoin-agreeContainer > p{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.seniorJoin-agree{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.seniorJoin-agree > p{
+  color: #333;
+  font-size: 24px;
+}
+
+.seniorJoin-agree > input{
+  width: 32px;
+  height: 32px;
+}
+
+.seniorJoin-joinButton{
+  background-color: #DCDCDC;
+  display: block;
+  text-align: center;
+  line-height: 64px;
+  width: 470px;
+  height: 64px;
+  color: white;
+  font-size: 30px;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
+.seniorBackgroundImg{
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  z-index: -1;
+}

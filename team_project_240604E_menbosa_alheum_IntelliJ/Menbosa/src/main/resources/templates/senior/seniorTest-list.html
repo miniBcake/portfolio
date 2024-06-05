@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorTest-list.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <main>
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
+    <div class="seniorTest-list-container">
+      <img th:src="@{/img/senior-alheum_logo.svg}" alt="" class="seniorTest-list-logo">
+      <div class="seniorTest-list-container-listName">
+        <p>난이도</p>
+        <p>검사명</p>
+        <p>권장 연령</p>
+        <p>바로가기</p>
+      </div>
+      <div th:each="senTest : ${senTestList}">
+        <div class="seniorTest-list-container-test">
+          <span th:if="${senTest.testListDiffi} eq 'Easy'" class="seniorTest-list-container-testLevel easy">하</span>
+          <span th:if="${senTest.testListDiffi} eq 'Normal'" class="seniorTest-list-container-testLevel normal">중</span>
+          <span th:if="${senTest.testListDiffi} eq 'Hard'" class="seniorTest-list-container-testLevel hard">상</span>
+          <p th:text="${senTest.testListName}"></p>
+          <p th:text="'만 ' + ${senTest.testListAge} + '세 이상'"></p>
+          <div class="seniorTest-list-container-testButton">
+            <a th:href="@{/alheum/senTest/testStart (testListNum=${senTest.testListNum})}">검사하러 가기</a>
+          </div>
+        </div>
+      </div>
+<!--      <div class="seniorTest-list-container-test">-->
+<!--        <span class="seniorTest-list-container-testLevel nomal">중</span>-->
+<!--        <p>기본 인지지능검사</p>-->
+<!--        <p>만 70세 이상</p>-->
+<!--        <div class="seniorTest-list-container-testButton"><a href="./../../templates/senior/seniorTest2-start.html">검사하러 가기</a></div>-->
+<!--      </div>-->
+<!--      <div class="seniorTest-list-container-test">-->
+<!--        <span class="seniorTest-list-container-testLevel hard">상</span>-->
+<!--        <p>기본 인지지능검사</p>-->
+<!--        <p>만 70세 이상</p>-->
+<!--        <div class="seniorTest-list-container-testButton"><a href="./../../templates/senior/seniorTest3-start.html">검사하러 가기</a></div>-->
+<!--      </div>-->
+      <p>이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</p>
+    </div>
+  </main>
+  <footer class="footer" th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

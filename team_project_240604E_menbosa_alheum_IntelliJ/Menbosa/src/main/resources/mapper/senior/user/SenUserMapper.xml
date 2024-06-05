@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.user.SenUserMapper">
+    <insert id="insertSenUser" parameterType="SenUserDTO">
+        <selectKey keyProperty="senMemNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_SEN_MEMBER.nextVal FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_SEN_MEMBER(SEN_MEM_NUM, SEN_MEM_NAME, SEN_MEM_PHONE_MID, SEN_MEM_PHONE_BACK, SEN_MEM_CERTIFICATION,
+                                   SEN_MEM_PASSWORD, SEN_MEM_PASSWORD_VERIFY)
+        VALUES(#{senMemNum}, #{senMemName}, #{senMemPhoneMid}, #{senMemPhoneBack}, #{senMemCertification}, #{senMemPassword},
+            #{senMemPasswordVerify})
+    </insert>
+
+    <select id="selectSenLogin" resultType="SenUserSessionDTO">
+        SELECT SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK, SEN_MEM_NUM, SEN_MEM_NAME
+        FROM MBS_SEN_MEMBER
+        WHERE '010' || TO_CHAR(SEN_MEM_PHONE_MID) || TO_CHAR(SEN_MEM_PHONE_BACK) = #{senMemPhone} AND SEN_MEM_PASSWORD = #{senMemPassword}
+    </select>
+
+    <delete id="deleteSenUser" parameterType="Long">
+        -- 시니어 메인페이지 어르신 탈퇴
+        DELETE FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </delete>
+
+    <update id="updateSenInfo" parameterType="SenUserUpdateDTO">
+        UPDATE MBS_SEN_MEMBER
+        SET
+            SEN_MEM_BIRTH = #{senMemBirth},
+            SEN_MEM_PASSWORD = #{senMemPassword},
+            SEN_MEM_PASSWORD_VERIFY = #{senMemPasswordVerify}
+        WHERE
+            SEN_MEM_NUM = #{senMemNum}
+    </update>
+
+    <select id="selectCheckSenPassword" parameterType="Long">
+        SELECT SEN_MEM_PASSWORD
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </select>
+
+</mapper>

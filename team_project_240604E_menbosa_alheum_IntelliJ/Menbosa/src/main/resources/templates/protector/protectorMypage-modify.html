@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>myPage-modify</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
+    <!-- myPage-modify css -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-modify.css}"/>
+    <!-- myPage-modify js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+<section id="protectorMypage-modify">
+    <aside>
+        <ul>
+            <a th:href="@{/alheum/mypage}">
+                <li>마이페이지</li>
+            </a>
+            <a th:href="@{/alheum/mypage/modify}">
+                <li>개인정보 수정</li>
+            </a>
+            <a th:href="@{/alheum/inquiry}">
+                <li>1:1문의</li>
+            </a>
+            <li id="mypage-asidelogout" class="mypage-warningsecession">로그아웃</li>
+            <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
+        </ul>
+    </aside>
+    <main>
+        <div class="mypage-subtitle-box">개인정보 수정</div>
+        <section class="mypage-contents-container">
+            <article>
+                <form th:action="@{/alheum/mypage/modify}" th:object="${proMypageModifyDTO}" method="post">
+                    <section>
+                        <div>
+                            성함(수정불가)
+                            <span class="mypage-phonewarning">*변경 요청은 1:1문의 바랍니다.</span>
+                        </div>
+                        <div th:text="${MyInfo.getProMemName()}" class="mypage-text-big">보호자</div>
+                    </section>
+                    <div>
+                        전화번호(수정불가)
+                        <span class="mypage-phonewarning">*변경 요청은 1:1문의 바랍니다.</span>
+                    </div>
+                    <section class="mypage-phonenum-box">
+                        <div class="mypage-text-big">010 -
+                            <span th:text="${MyInfo.getProMemPhoneMid()}" class="mypage-text-big"></span> -
+                            <span th:text="${MyInfo.getProMemPhoneBack()}" class="mypage-text-big"></span>
+                        </div>
+                    </section>
+                    <section>
+                        <label for="proMemEmail">
+                            <div>Email</div>
+                            <input
+                                    th:value="${MyInfo.getProMemEmail()}"
+                                    type="text"
+                                    id="proMemEmail"
+                                    name="proMemEmail"
+                                    placeholder="이메일을 입력하세요"
+                            /></label>
+                    </section>
+                    <section>
+                        <label for="proMemPassword">
+                            <div>새 비밀번호</div>
+                            <input
+                                    type="password"
+                                    id="proMemPassword"
+                                    name="proMemPassword"
+                                    placeholder="변경할 비밀번호를 입력하세요"/></label>
+                        <label for="proMemPasswordVerify">
+                            <div>새 비밀번호 확인</div>
+                            <input
+                                    id="proMemPasswordVerify"
+                                    type="password"
+                                    name="proMemPasswordVerify"
+                                    placeholder="변경할 비밀번호를 다시 입력하세요"
+                            /></label>
+                    </section>
+                    <div class="mypage-button-box-flex">
+                        <button type="reset" class="mypage-cancel mypage-button">취소</button>
+                        <button class="mypage-button mypage-add">저장</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <a th:href="@{/alheum/mypage}"
+           class="mypage-undo"
+        >돌아가기 &#10095;
+        </a>
+    </main>
+</section>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

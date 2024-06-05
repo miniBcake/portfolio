@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>passwordVerify</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- join JS -->
+  <script defer th:src="@{/js/protectorJoin.js}"></script>
+  <!-- join CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorJoin.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <div class="protectorJoin-title">
+      <p>회원가입</p>
+    </div>
+    <div class="protectorJoin-main">
+      <form th:action="@{/alheum/user/join}" method="post" id="regist-form">
+        <p class="protectorJoin-nameTitle">이름</p>
+        <input name="proMemName" type="text" id="join_name" class="protectorJoin-name" placeholder="이름을 입력해주세요.">
+
+        <p class="protectorJoin-nameTitle">전화번호</p>
+        <div class="protectorJoin-phone">
+          <input type="text" class="protectorJoin-number" value="010" disabled>
+          <span>-</span>
+          <input name="proMemPhoneMid" type="text" id="join_phoneFront" class="protectorJoin-number" maxlength="4" placeholder="가운데 자리">
+          <span>-</span>
+          <input name="proMemPhoneBack" type="text" id="join_phoneBack" class="protectorJoin-number" maxlength="4" placeholder="마지막 자리">
+          <button type="button">인증하기</button>
+        </div>
+        <input name="proMemCertification" type="text" class="protectorJoin-inputNumber" placeholder="인증번호를 입력하세요.">
+
+        <p class="protectorJoin-nameTitle">비밀번호</p>
+        <input name="proMemPassword" type="password" id="join_password" class="protectorJoin-password" placeholder="비밀번호을 입력해주세요.">
+        <br>
+        <input name="proMemPasswordVerify" type="password" class="protectorJoin-passwordVerify" placeholder="비밀번호을 다시 한번 입력해주세요.">
+
+        <p class="protectorJoin-nameTitle">이메일</p>
+        <input name="proMemEmail" type="text" id="join_email" class="protectorJoin-email" placeholder="이메일을 입력해주세요.">
+
+        <div class="protectorJoin-checkbox">
+          <div class="protectorJoin-checkboxAll">
+            <p>약관 전체 동의</p>
+            <input type="checkbox" id="checkAll" class="protectorJoin-checked">
+          </div>
+
+          <div class="protectorJoin-checkCnt">
+            <p>만 70세 이상입니다</p>
+            <input type="checkbox" class="protectorJoin-check">
+          </div>
+
+          <div class="protectorJoin-checkCnt">
+            <p>이용약관 동의</p>
+            <input type="checkbox" class="protectorJoin-check">
+          </div>
+
+          <div class="protectorJoin-checkCnt">
+            <p>개인정보 수집 및 이용 동의</p>
+            <input type="checkbox" class="protectorJoin-check">
+          </div>
+        </div>
+
+        <div class="protectorJoin-submit">
+          <button id="regist-ok-btn">회원가입 완료</button>
+        </div>
+    </form>
+    </div>
+  </main>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

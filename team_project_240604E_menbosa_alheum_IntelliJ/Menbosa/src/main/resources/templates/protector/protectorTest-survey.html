@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>알흠:謁欽 --보호자설문</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
+    <!-- survey CSS -->
+    <link rel="stylesheet" th:href="@{/css/protectorTest-survey.css}">
+    <!--js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script defer th:src="@{/js/protectorTest-survey.js}"></script>
+      <!-- header CSS -->
+      <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+      <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+      <!-- footer CSS -->
+      <link rel="stylesheet" th:href="@{/css/footer.css}">
+  </head>
+  <body>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+    <main>
+       <section id="protectorTest-suvey-topText">
+        <p>어르신의 최근 한달 간 상황을 종합하여 일상생활에서 다음과 같은 모습을 보인 정도를 평가하여 문항을 작성하세요.
+       </section>
+       <form method="post" target="blankifr">
+       <section id="protectorTest-suvey-testContents">
+        <article th:each="list:${SurveyQList}">
+            <div class="protectorTest-suvey-testContents-title">
+                <div th:text="${list.surveyQuestNum}+'.'" class="title-num">-</div>
+                <span th:text="${list.surveyQuestContents}">-</span></div>
+          <div class="protectorTest-suvey-testContents-answerbuttons">
+            <div class="protectorTest-suvey-testContents-answer" data-value="0">예전과 별 차이 없다</div>
+            <div class="protectorTest-suvey-testContents-answer" data-value="1">예전에 비해 조금 나빠졌다</div>
+            <div class="protectorTest-suvey-testContents-answer" data-value="2">예전에 비해 많이 나빠졌다</div>
+          </div>
+        </article>
+       </section>
+       <div class="protectorTest-suvey-buttonbox">
+         <button type="button" class="suvey-button">결과 확인하기</button>
+       </div>
+           <input type="hidden" id="scoreInput" name="resultSurveyScore" value="0">
+       </form>
+    </main>
+  <iframe name='blankifr' style='display:none'></iframe>
+    <footer></footer>
+
+    <section class="protector-result-background">
+      <!-- 모달창 흰창 -->
+      <div class="protector-result-modalBox">
+        <div class="protector-result-logoImg"><img th:src="@{/img/senior-alheum_logo.svg}" alt="로고파일"></div>
+        <div class="resultSurvey">
+<!--            자바스크립트로 결과가 들어갈 부분-->
+        </div>
+         <div class="protector-result-movementButton"><a th:href="@{/alheum/recommend}">병원 및 시설찾기</a></div>
+        <!-- 버튼 하단의 홈으로 바로 가는 글씨 -->
+        <div class="protector-result-gohome"><a th:href="@{/alheum}">홈으로 가기</a></div>
+        <p class="protector-result-warningText">이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</p>
+      </div>
+    </section>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+  </body>
+</html>

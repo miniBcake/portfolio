@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration-line: none;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+
+.exheader{
+  height: 80px;
+  background-color: aqua;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+.seniorMain-container{
+  width: 970px;
+  /* background-color: blueviolet; */
+  margin: 0 auto;
+  
+}
+
+.seniorMain-logo{
+  width: 330px;
+  height: 230px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.seniorMain-welcome{
+  text-align: center;
+  font-size: 44px;
+  margin-top: 46px;
+  margin-bottom: 90px;
+}
+
+.seniorMain-menus{
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  margin-bottom: 40px;
+}
+
+.seniorMain-myInfo{
+  text-align: center;
+  height: 100%;
+  width: 465px;
+  background-color: #F9D80D;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.seniorMain-myInfo-title{
+  font-size: 44px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+.seniorMain-myInfo-menu{
+  font-size: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.seniorMain-myInfo > hr{
+  color: white;
+  margin-bottom: 20px;
+}
+
+.seniorMain-menus-right{
+  height: 100%;
+  width: 465px;
+}
+
+.seniorMain-menu-test{
+  width: 465px;
+  height: 290px;
+  background-color: #D3DE16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.seniorMain-menu-test > a, p{
+  font-size: 44px;
+  text-decoration-line: none;
+}
+
+.seniorMain-menu-account{
+  width: 465px;
+  height: 63px;
+  /* background-color: #686868; */
+  margin-top: 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.seniorMain-menu-logout{
+  width: 190px;
+  height: 100%;
+  background-color: #BCBCBC;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.seniorMain-menu-login{
+  width: 255px;
+  height: 100%;
+  background-color: #37BBCA;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.seniorMain-menu-logout:hover{
+  background-color: #EF4136;
+}
+
+.seniorBackgroundImg{
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  z-index: -1;
+}
+
+.footer{
+  margin-top: 100px;
+}

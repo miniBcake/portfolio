@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorTest3.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <script defer th:src="@{/js/seniorRadioCheck.js}"></script>
+</head>
+<body>
+  <main>
+    <div class="seniorTest-container">
+      <div class="seniorTest-header">
+        <a th:href="@{/alheum/senUser/main}"><img th:src="@{/img/senior-alheum_logo.svg}" alt=""></a>
+        <h1 class="seniorTest-header-title">인지기능검사</h1>
+      </div>
+      <p>2. 3가지 물건 중에 가운데 있던 것은?</p>
+      <img th:src="@{/img/test3-1-2.png}" alt="">
+      <form th:action="@{/alheum/senTest/processForm32}" th:method="post">
+        <div class="seniorTest-radioButton">
+          <div>가위<input type="radio" name="test3-1-2-radio" class="test-radio" value="1"></div>
+          <div>신발<input type="radio" name="test3-1-2-radio" class="test-radio" value="0"></div>
+          <div>리모콘<input type="radio" name="test3-1-2-radio" class="test-radio" value="0"></div>
+          <div>양말<input type="radio" name="test3-1-2-radio" class="test-radio" value="0"></div>
+        </div>
+        <div class="seniorTest-buttons">
+<!--          <div class="seniorTest-button"><button class="back">이전문항</button></div>-->
+          <div class="seniorTest-button"><button type="submit" class="next">다음문항</button></div>
+        </div>
+      </form>
+      <div><p>!! 문항을 제대로 작성하지 않을 경우, 결과의 신뢰도가 떨어집니다.</p></div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

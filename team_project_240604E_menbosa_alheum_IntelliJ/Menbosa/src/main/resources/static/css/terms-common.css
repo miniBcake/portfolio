@@ -1,0 +1,81 @@
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+*/
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+  }
+  
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--font-color-default);
+    /* 텍스트긁기 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* 개인 */
+  :root{
+    --font-lightgrey:#a1a1a1;
+    --color-back-lightgrey: #f8f8f8;
+    --color-back-grey: #f4f4f4;
+    --color-table-grey: #d3d3d3;
+    --color-back-white:rgb(255, 255, 255);
+    --color-shadow: rgba(0,0,0,0.1);
+    --color-hover-shadow: rgba(254,122,21,0.5);
+  }
+  
+  h1{
+    font-size: 24px;
+    font-weight: 600;
+    margin: 40px 0;
+    text-align: center;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+  strong{
+    font-weight: 500;
+  }
+  P{
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+
+  main>section{
+    width: 970px;
+    margin: 0 auto;
+  }
+  
+  main>section>article{
+    background-color: var( --color-back-lightgrey);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px 0;
+  }

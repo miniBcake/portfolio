@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1문의 상세</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- inquiryDetails CSS -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-inquiryDetails.css}">
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+<main>
+    <div class="protectorMypage-inquiryDetails-title">
+        <div class="title-top">
+            <p>
+                <span>[1:1 문의]</span>
+                <span th:text="${proInqDetails.boardInquTitle}">=</span>
+            </p>
+        </div>
+        <!--      <div class="title-bottom">-->
+        <!--        <span>작성자</span>-->
+        <span th:text="${#temporals.format(proInqDetails.boardInquDate, 'yyyy-mm-dd')}"></span>
+    </div>
+<div class="protectorMypage-inquiryDetails-content">
+    <p th:text="${proInqDetails.boardInquContents}">
+        보고싶다
+    </p>
+    <p>
+        <!--        <img src="/img/community-example.png" alt="">-->
+    </p>
+</div>
+<div class="protectorMypage-inquiryDetails-comments">
+    <div class="comments-top">
+        <p><img th:src="@{/img/community-commentsLogo.png}" alt=""></p>
+        <span>Comments</span>
+    </div>
+    <ul class="comments-list">
+        <li>
+            <div class="comments-list-own">
+                <p><img th:src="@{/img/community-profile.png}" alt=""></p>
+                <div>
+                    <p class="comments-list-writer">
+                        <span>관리자</span>
+                    </p>
+                    <p class="comments-list-contents">
+                        <span>안녕하세요 알흠 페이지 관리자 입니다. 문의 주신 건은 처리될 예정입니다.</span>
+                        <span>20240511 15:08</span>
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="protectorMypage-inquiryDetails-listButton">
+    <a th:href="@{/alheum/inquiry}">목록으로</a>
+</div>
+</main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

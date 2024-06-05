@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>senior-details</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
+    <!-- senior-details css -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-seniorDetails.css}"/>
+    <!-- senior-details js -->
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    ></script>
+    <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+<section id="protectorMypage-seniorDetails">
+    <aside>
+        <ul>
+            <a th:href="@{/alheum/mypage}">
+                <li>마이페이지</li>
+            </a>
+            <a th:href="@{/alheum/mypage/check}">
+                <li>개인정보 수정</li>
+            </a>
+            <a th:href="@{/alheum/inquiry}">
+                <li>1:1문의</li>
+            </a>
+            <li id="mypage-asidelogout" class="mypage-warningsecession">로그아웃</li>
+            <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
+        </ul>
+    </aside>
+    <main>
+        <div class="mypage-subtitle-box">어르신 정보상세</div>
+        <section class="mypage-contents-container">
+            <section th:each="info:${MySenDetails}" class="senior-info-container-flex">
+                <article>
+                    <img
+                            class="mypage-icon-user"
+                            src="/img/mypage_icon_user.svg"
+                            alt="유저"
+                    />
+                    <span th:text="${info.senMemName}"></span>
+                </article>
+                <article>
+                    <div>생년월일 : <span th:text="${#temporals.format(info.senMemBirth, 'yyyy/MM/dd')}"></span></div>
+                </article>
+                <article>
+                    <div>
+                        전화번호 : <span>010</span>-<span th:text="${info.senMemPhoneMid}">0000</span>-<span
+                            th:text="${info.senMemPhoneBack}">0000</span>
+                    </div>
+                </article>
+            </section>
+            <div id="senior-info-resultall-title" class="mypage-subtitle-box" th:each="info:${MySenDetails}">
+                <span th:text="${info.senMemName}"></span>님의 검사결과 모아보기
+            </div>
+            <article id="senior-info-resultall-container">
+                <div class="mypage-table">
+                    <div class="mypage-tr">
+                        <p class="mypage-th">검사날짜</p>
+                        <p class="mypage-th">검사명</p>
+                        <p class="mypage-th">위험도</p>
+                    </div>
+                    <div class="mypage-tr" th:each="test:${MySenInfoList}">
+                        <p class="mypage-td" th:text="${#temporals.format(test.testResultDate, 'yy년 M월 d일')}"></p>
+                        <p class="mypage-td" th:text="${test.testListName}"></p>
+                        <p class="mypage-td">
+                            <span th:if="${test.testResultScore} == 4"
+                                  class="mypage-state-box mypage-state-good">양호</span>
+                            <span th:if="${test.testResultScore} == 3"
+                                  class="mypage-state-box mypage-state-mid">주의</span>
+                            <span th:if="${test.testResultScore} >= 1 and ${test.testResultScore} <= 2"
+                                  class="mypage-state-box mypage-state-bad">위험</span>
+                        </p>
+                    </div>
+                    <p class="mypage-warning">
+                        이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를
+                        임의로 해석하거나 처치를 진행하지마세요.
+                    </p>
+                </div>
+            </article>
+        </section>
+        <a th:href="@{/alheum/mypage}" class="mypage-undo"
+        >돌아가기 &#10095;
+        </a>
+    </main>
+</section>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

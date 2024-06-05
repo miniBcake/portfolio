@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.mypage.SenMypageMapper">
+    <select id="selectSenMyInfo" resultType="SenMyInfoDTO" parameterType="long">
+        -- 시니어 마이페이지 어르신정보M_
+        SELECT SEN_MEM_NUM, SEN_MEM_NAME,SEN_MEM_BIRTH,
+               '010 - ' || TO_CHAR(SEN_MEM_PHONE_MID) || ' - ' || TO_CHAR(SEN_MEM_PHONE_BACK) AS SEN_MEM_PHONE
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </select>
+
+    <select id="selectSenMyProInfo" resultType="SenMyProInfoDTO" parameterType="long">
+        -- 시니어 마이페이지 보호자 정보
+        SELECT p.PRO_MEM_NAME,
+            '010 - ' || TO_CHAR(p.PRO_MEM_PHONE_MID) || ' - ' || TO_CHAR(p.PRO_MEM_PHONE_BACK) AS PRO_MEM_PHONE
+        FROM MBS_SEN_MEMBER s
+                 JOIN MBS_PRO_MEMBER p ON s.PRO_MEM_NUM = p.PRO_MEM_NUM
+        WHERE s.SEN_MEM_NUM = #{senMemNum}
+    </select>
+
+    <select id="selectSenMyTestInfo" resultType="SenMyTestInfoDTO" parameterType="long">
+        SELECT R.TEST_RESULT_DATE
+             , R.TEST_RESULT_SCORE
+             , L.TEST_LIST_NAME
+        FROM MBS_TEST_RESULT R JOIN MBS_TEST_LIST L
+                                    ON R.TEST_LIST_NUM = L.TEST_LIST_NUM
+        WHERE SEN_MEM_NUM = #{senMemNum}
+        ORDER BY TEST_RESULT_DATE ASC
+    </select>
+
+</mapper>

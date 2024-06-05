@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>senior-add</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
+    <!-- senior-add css -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-common.css}" />
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-seniorAdd.css}">
+    <!-- senior-add js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
+    <script defer th:src="@{/js/protectorMypage-seniorAdd.js}"></script>
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+  </head>
+  <body>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
+    <section id="protectorMypage-senioradd">
+    <aside>
+        <ul>
+          <a th:href="@{/alheum/mypage}"><li>마이페이지</li></a>
+          <a th:href="@{/alheum/mypage/check}"><li>개인정보 수정</li></a>
+          <a th:href="@{/alheum/inquiry}"><li>1:1문의</li></a>
+          <li id="mypage-asidelogout" class="mypage-warningsecession">로그아웃</li>
+          <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
+        </ul>
+    </aside>
+    <main>
+      <div class="mypage-subtitle-box">어르신 등록하기</div>
+      <section class="mypage-contents-container">
+        <article>
+          <div class="mypage-text-big">등록할 어르신 정보 입력</div>
+          <form action="" method="post">
+            <section>
+              <label for="seniorname"
+                ><div>성함</div>
+                <input
+                  id="seniorname"
+                  type="text"
+                  name="senMemName"
+                  placeholder="어르신 성함을 입력하세요"
+              /></label>
+            </section>
+            <div>전화번호</div>
+            <section class="mypage-phonenum-box">
+              <label for="phoneNum-first">
+                <input
+                  id="phoneNum-first"
+                  type="tel"
+                  name="phoneNum-first"
+                  maxlength="3"
+                  value="010"
+                  disabled
+                />
+                -
+              </label>
+              <label for="phoneNum-second">
+                <input
+                  id="phoneNum-second"
+                  type="tel"
+                  name="senMemPhoneMid"
+                  maxlength="4"
+                  placeholder="가운데자리"
+                />
+                -
+              </label>
+              <label for="phoneNum-last">
+                <input
+                id="phoneNum-last"
+                type="tel"
+                name="senMemPhoneBack"
+                maxlength="4"
+                placeholder="마지막자리"
+                />
+              </label>
+              <button id="certiMessage" type="button" class="mypage-button">인증</button>
+            </section>
+            <section>
+              <label for="phone-certi">
+                <input
+                  id="phone-certi"
+                  type="text"
+                  name="senMemCertification"
+                  placeholder="인증번호를 입력하세요"
+                  required
+                />
+              </label>
+            </section>
+            <button class="mypage-button mypage-add">등록</button>
+          </form>
+        </article>
+      </section>
+      <a th:href="@{/alheum/mypage}" class="mypage-undo">돌아가기 &#10095;</a>
+    </main>
+    </section>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+.exheader{
+  height: 80px;
+  background-color: aqua;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+.seniorLogin-container{
+  width: 970px;
+  margin: 0 auto;
+}
+
+.seniorLogin-logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.seniorLogin-logo > img{
+  height: 190px;
+  width: 275px;
+}
+
+.seniorLogin-title{
+  font-size: 44px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.seniorLogin-loginBox{
+  height: 540px;
+  width: 530px;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.seniorLogin-loginBox > p{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.seniorLogin-loginBox > input{
+  font-size: 24px;
+  width: 470px;
+  height: 70px;
+  border: 1px solid #8C8C8C;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding-left: 10px;
+
+}
+
+#seniorPhonenumber{
+  margin-right: 10px;
+}
+
+.seniorLogin-loginBox > input::placeholder{
+  color: #A7A7A7;
+}
+
+.seniorLogin-loginBox-loginButton{
+  display: inline-block;
+  text-align: center;
+  /*padding-top: 10px;*/
+  width: 470px;
+  height: 65px;
+  background-color: #FE7A15;
+  color: white;
+  font-size: 30px;
+  border-radius: 5px;
+  margin-top: 35px;
+  cursor: pointer;
+  text-decoration-line: none;
+}
+
+.seniorLogin-loginBox-menu{
+  width: 470px;
+  height: 50px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.seniorPassword-find{
+  width: 240px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #B4B4B4;
+  color: #717171;
+  text-decoration-line: none;
+
+}
+
+.seniorJoin{
+  width: 240px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
+  text-decoration-line: none;
+}
+
+.seniorBackgroundImg{
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  z-index: -1;
+}

@@ -1,0 +1,15 @@
+.mypage-contents-container > article{
+  width: 97%;
+  margin: auto;
+}
+
+.mypage-add{
+  margin: 12px 0px;
+  transform: translate(200%);
+}
+
+.mypage-text-big{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}

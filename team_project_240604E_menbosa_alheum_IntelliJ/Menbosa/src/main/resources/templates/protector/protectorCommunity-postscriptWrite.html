@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-시설후기글쓰기</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- postscriptWrite CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-postscriptWrite.css}">
+  <!-- postscriptWrite JS -->
+  <script defer th:src="@{/js/protectorCommunity-postscriptWrite.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <h2>시설후기</h2>
+    <form th:action="@{/alheum/community/postWrite}"  method="post"  enctype="multipart/form-data">
+      <div class="postscriptWrite-title">
+        <label for="">제목</label>
+        <input type="text" name="boardRecomTitle" id="">
+      </div>
+      <textarea name="boardRecomContents" id="postscriptWrite-content"></textarea>
+      <div class="postscriptWrite-inputFile">
+        <span>첨부파일</span>
+        <input type="file" id="postscriptWrite-file" name="postFile">
+        <button type="button" onclick="deleteFile(this)">삭제</button>
+      </div>
+      <div class="postscriptWrite-buttons">
+        <a th:href="@{/alheum/community/postMain}">취소</a>
+        <button type="submit">작성완료</button>
+      </div>
+    </form>
+  </main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

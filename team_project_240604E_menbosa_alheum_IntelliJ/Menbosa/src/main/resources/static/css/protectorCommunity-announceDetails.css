@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--font-color-default);
+  font-size: 16px;
+  /* 텍스트긁기 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+/* 상세글 제목 */
+.protectorCommunity-announceDetails-title{
+  width: 800px;
+  margin: 40px auto 0;
+}
+
+.title-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-top > p > span{
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.title-bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.menuButton{
+  cursor: pointer;
+}
+
+/* 상세글 내용 */
+.protectorCommunity-announceDetails-content{
+  width: 800px;
+  margin: 0 auto;
+  border-top:1px solid #D9D9D9;
+  border-bottom:1px solid #D9D9D9;
+  padding: 20px 0;
+}
+
+.protectorCommunity-announceDetails-content > p{
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.protectorCommunity-announceDetails-content > p > img{
+  width: 100%;
+}
+
+
+/* 목록 돌아가기 버튼 */
+.protectorCommunity-announceDetails-listButton{
+  margin: 80px 0;
+  text-align: center;
+}
+
+.protectorCommunity-announceDetails-listButton > a{
+  background-color: var(--color-main);
+  color: var(--font-color-white);
+  padding: 10px 40px;
+  border-radius: 30px;
+}
+
+.protectorCommunity-announceDetails-listButton > a:hover{
+  background-color: var(--color-main-hover);
+}

@@ -1,0 +1,111 @@
+/* 기본 설정 */
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 로그인 */
+.protectorLoginTitle p {
+  color: var(--color-main);
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.protectorLoginCnt {
+  width: 500px;
+  height: 350px;
+  margin: 30px auto 200px auto;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: inset 1px 1px 3px 1px rgba(0.15, 0.15, 0.15, 0.15);
+}
+
+.protectorLoginMain {
+  width: 400px;
+  margin: auto;
+}
+
+.protectorLoginMainCnt {
+  position: relative;
+  top: 40px;
+}
+
+.protectorLoginNum,
+.protectorLoginPw {
+  color: var(--color-main);
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.protectorPhoneNum,
+.protectorPassword {
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px 0;
+  outline-color: rgb(226, 226, 226);
+}
+
+.protectorLoginBtn button {
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--color-main);
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.protectorLoginBtn button:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
+}
+
+.protectorLogin-subMenu {
+  display: flex;
+  margin-top: 10px;
+  position: relative;
+  left: 90px;
+}
+
+.protectorLogin-subMenu a {
+  margin: 0 10px;
+  color: var(--color-main);
+}
+
+.protectorLogin-subMenu p {
+  color: lightgrey;
+}

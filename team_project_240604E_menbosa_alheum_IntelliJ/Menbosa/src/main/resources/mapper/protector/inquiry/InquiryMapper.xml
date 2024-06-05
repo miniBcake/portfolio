@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.protector.inquiry.InquiryMapper">
+    <select id="selectProInq" resultType="ProInqDTO">
+        --- [ ]  **SELECT**문의 목록 셀렉트
+        SELECT BOARD_INQU_NUM
+             , BOARD_INQU_TITLE
+             , BOARD_INQU_DATE
+        FROM MBS_BOARD_INQU
+        WHERE PRO_MEM_NUM = #{proMemNum}
+        ORDER BY BOARD_INQU_NUM DESC
+    </select>
+
+    <select id="selectInqPage" parameterType="InquCriteria" resultType="ProInqDTO">
+        <![CDATA[
+        SELECT BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE
+        FROM (SELECT ROWNUM AS RNUM, BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE, PRO_MEM_NUM
+              FROM (SELECT BOARD_INQU_NUM, BOARD_INQU_TITLE, BOARD_INQU_DATE, PRO_MEM_NUM
+                    FROM MBS_BOARD_INQU
+                    ORDER BY BOARD_INQU_NUM DESC)
+              WHERE ROWNUM <= #{page} * #{amount})
+        WHERE RNUM > (#{page} - 1) * #{amount}
+          AND PRO_MEM_NUM = #{proMemNum}
+        ORDER BY BOARD_INQU_DATE DESC
+        ]]>
+        </select>
+
+    <select id="selectInquTotal" resultType="int" parameterType="Long">
+        SELECT COUNT(BOARD_INQU_NUM) FROM  MBS_BOARD_INQU WHERE PRO_MEM_NUM = #{proMemNum}
+    </select>
+
+    <select id="selectProInqDetails" resultType="ProInqDetailsDTO">
+        --- [ ]  **SELECT**문의글 상세보기 셀렉트
+        SELECT BOARD_INQU_TITLE
+             , BOARD_INQU_CONTENTS
+             , BOARD_INQU_DATE
+        FROM MBS_BOARD_INQU
+        WHERE PRO_MEM_NUM = #{proMemNum}
+          AND BOARD_INQU_NUM = #{boardInquNum}
+    </select>
+
+    <insert id="insertInqu" parameterType="ProInqDetailsDTO">
+        --- [ ]  **INSERT** 문의글 작성
+        INSERT INTO MBS_BOARD_INQU
+        VALUES (SEQ_BOARD_INQU.NEXTVAL, #{boardInquTitle}, #{boardInquContents}, SYSDATE, #{proMemNum})
+    </insert>
+</mapper>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorMypage.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+<!--  <script defer th:src="@{/js/seniorMypage.js}"></script>-->
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <main>
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
+    <div class="seniorMypage-container">
+      <div class="seniorMypage-top">
+        <img th:src="@{/img/senior-alheum_logo.svg}" alt="" class="seniorMypage-logo">
+        <div>내 정보</div>
+      </div>
+      <form action="/alheum/senUser/update" method="post">
+        <div class="seniorMypage-info">
+          <div class="seniorMypage-myInfo">
+            <div class="seniorMypage-myInfo-title">내 정보 수정하기</div>
+            <div class="seniorMypage-myInfo-info">
+              <div class="seniorMypage-myInfo-info-key">
+                <p>성함</p>
+                <p>생년월일</p>
+                <p>전화번호</p>
+                <p>비밀번호</p>
+                <p>비밀번호 재확인</p>
+              </div>
+              <div class="seniorMypage-myInfo-info-value" th:each="senMyInfo : ${senMyInfo}">
+                <p  th:text="${senMyInfo.senMemName}"></p>
+                  <div class="seniorMypage-myInfo-info-value-birth">
+                    <input type="text" name="senMemBirth" id="birth-year" th:placeholder="${senMyInfo.senMemBirth}">
+                  </div>
+                  <p th:text="${senMyInfo.senMemPhone}"></p>
+                  <input type="password" name="senMemPassword" id="password" placeholder="변경할 비밀번호">
+                  <input type="password" name="senMemPasswordVerify" id="confirmPassword" placeholder="다시 입력해주세요">
+              </div>
+            </div>
+          </div>
+          <div class="seniorMypage-protectorInfo"  th:each="senMyProInfo : ${senMyProInfo}">
+            <div class="seniorMypage-protectorInfo-title">보호자 정보</div>
+            <div class="seniorMypage-protectorInfo-info">
+              <div class="seniorMypage-protectorInfo-info-key">
+                <p>보호자 성함</p>
+                <p>전화번호</p>
+              </div>
+              <div class="seniorMypage-protectorInfo-info-value">
+                <p th:text="${senMyProInfo.proMemName}"></p>
+                <p th:text="${senMyProInfo.proMemPhone}"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seniorMypage-testResults">
+          <div class="seniorMypage-testResults-title">검사 결과 모아보기</div>
+          <div class="seniorMypage-testResults-container">
+            <div class="seniorMypage-testResults-testDate">
+              <p style="color: #BCBEC0;">검사 날짜</p>
+              <div th:each="senMyTestInfo : ${senMyTestInfo}">
+                <p th:text="${senMyTestInfo.testResultDate}"></p>
+              </div>
+            </div>
+            <div class="seniorMypage-testResults-testName">
+              <p style="color: #BCBEC0;">검사명</p>
+              <div th:each="senMyTestInfo : ${senMyTestInfo}">
+                <p th:text="${senMyTestInfo.testListName}"></p>
+              </div>
+
+            </div>
+            <div class="seniorMypage-testResults-testDanger">
+              <p style="color: #BCBEC0;">위험도</p>
+              <div th:each="senMyTestInfo : ${senMyTestInfo}">
+                <span th:if="${senMyTestInfo.testResultScore} >= 4" class="seniorMypage-testResults-good">양호</span>
+                <span th:if="${senMyTestInfo.testResultScore} >= 3 and ${senMyTestInfo.testResultScore} < 4 " class="seniorMypage-testResults-caution">주의</span>
+                <span th:if="${senMyTestInfo.testResultScore} >= 1 and ${senMyTestInfo.testResultScore} <= 2" class="seniorMypage-testResults-danger">위험</span>
+
+              </div>
+            </div>
+          </div>
+          <div class="seniorMypage-testResults-footer">이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를 임의로 해석하거나 처치를 진행하지마세요.</div>
+        </div>
+        <div class="seniorMypage-footerButton">
+          <!--        <button class="secessionButton" type="submit" th:href="@{/alheum/senUser/delete}">탈퇴하기</button>-->
+          <a class="secessionButton" th:href="@{/alheum/senUser/delete}">탈퇴하기</a>
+          <a class="cancelButton"  th:href="@{/alheum/senUser/main}">취소</a>
+          <button type="submit" class="saveButton">수정저장하기</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

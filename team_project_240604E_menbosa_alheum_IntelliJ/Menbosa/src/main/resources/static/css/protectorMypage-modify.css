@@ -1,0 +1,36 @@
+.mypage-contents-container > article{
+  width: 97%;
+  margin: auto;
+}
+
+.mypage-add, .mypage-cancel{
+  margin: 12px 5px;
+}
+
+.mypage-button-box-flex{
+  display: flex;
+  justify-content: center;
+}
+
+.mypage-cancel{background-color: var(--color-gray);}
+.mypage-cancel:hover{
+  background-color: var(--color-gray-hover);
+  box-shadow: 0 0 4px 3px var(--color-shadow);
+}
+
+.mypage-text-big{
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 0 10px 0;
+  color: var(--font-color-grey);
+}
+
+input[name='phoneNum_last']{
+  width: 100%;
+}
+
+/* ////////////////////////////////////////////// */
+.mypage-phonewarning{
+  font-size: 12px;
+  color: red;
+}

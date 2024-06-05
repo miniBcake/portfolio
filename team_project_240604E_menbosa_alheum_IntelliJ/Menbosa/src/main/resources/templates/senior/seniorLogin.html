@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorLogin.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <main>
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
+    <div class="seniorLogin-container">
+      <form method="post">
+        <div class="seniorLogin-logo"><img th:src="@{/img/senior-alheum_logo.svg}" alt=""></div>
+        <p class="seniorLogin-title">로그인</p>
+        <div class="seniorLogin-loginBox">
+          <p>전화번호</p>
+          <input type="text" name="senMemPhone" id="seniorPhonenumber" placeholder="숫자만 입력해주세요 (ex. 01012341234)">
+          <p>비밀번호</p>
+          <input type="password" name="senMemPassword" id="seniorPassword" placeholder="비밀번호를 입력해주세요">
+          <button type="submit" class="seniorLogin-loginBox-loginButton">로그인</button>
+
+          <div class="seniorLogin-loginBox-menu">
+            <a class="seniorPassword-find" th:href="@{/alheum/senUser/findPassword}">비밀번호 찾기</a>
+            <a class="seniorJoin" th:href="@{/alheum/senUser/join}">회원가입</a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </main>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

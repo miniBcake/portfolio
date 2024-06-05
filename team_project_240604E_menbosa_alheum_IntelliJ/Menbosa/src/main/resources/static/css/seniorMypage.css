@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+.seniorMypage-container{
+  width: 970px;
+  margin: 0 auto;
+}
+
+.seniorMypage-top{
+  margin-top: 50px;
+  display: flex;
+}
+
+.seniorMypage-logo{
+  width: 230px;
+  height: 160px;
+}
+
+.seniorMypage-top > div{
+  font-size: 44px;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.seniorMypage-info{
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #0f9bad; */
+  margin-top: 20px;
+}
+
+.seniorMypage-myInfo{
+  width: 470px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.seniorMypage-myInfo-title{
+  height: 60px;
+  background-color: #D3DD26;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 20px;
+}
+
+.seniorMypage-myInfo-info{
+  background-color: white;
+  border: 1px solid lightgrey;
+  display: flex;
+  height: 330px;
+}
+
+.seniorMypage-myInfo-info-key{
+  padding: 20px;
+  width: 220px;
+  border-bottom-left-radius: 20px;
+
+}
+
+.seniorMypage-myInfo-info-key > p{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.seniorMypage-myInfo-info-value{
+  width: 400px;
+  padding: 20px;
+}
+
+.seniorMypage-myInfo-info-value > p{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.seniorMypage-myInfo-info-value > input{
+  padding-left: 10px;
+}
+
+.seniorMypage-myInfo-info-value-birth{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.seniorMypage-myInfo-info-value-birth > input{
+  background-color: #F1F2F2;
+  border-radius: 3px;
+  height: 35px;
+  padding-left: 10px;
+
+  /*text-align: center;*/
+}
+
+.seniorMypage-myInfo-info-value-birth > p{
+  font-size: 20px;
+}
+
+#birth-year{
+  width: 280px;
+}
+
+#birth-month{
+  width: 60px;
+}
+
+#birth-day{
+  width: 60px;
+}
+
+#password{
+  width: 280px;
+  background-color: #F1F2F2;
+  border-radius: 3px;
+  height: 35px;
+  margin-bottom: 30px;
+}
+
+#confirmPassword{
+  width: 280px;
+  background-color: #F1F2F2;
+  border-radius: 3px;
+  height: 35px;
+}
+
+.seniorMypage-protectorInfo{
+  width: 475px;
+  height: 225px;
+  background-color: white;
+  /* background-color: #37BACC; */
+}
+
+.seniorMypage-protectorInfo-title{
+  height: 60px;
+  background-color: #A7A9AC;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+  border-top-right-radius: 20px;
+}
+
+.seniorMypage-protectorInfo-info{
+  height: 180px;
+  width: 100%;
+  /* background-color: #DF5427; */
+  display: flex;
+  border: 1px solid lightgrey;
+  border-bottom-right-radius: 20px ;
+}
+
+.seniorMypage-protectorInfo-info-key{
+  width: 200px;
+  padding: 20px;
+}
+
+.seniorMypage-protectorInfo-info-key > P{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.seniorMypage-protectorInfo-info-value{
+  width: 250px;
+  padding: 20px;
+}
+
+.seniorMypage-protectorInfo-info-value > P{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.seniorMypage-testResults{
+  margin-top: 30px;
+  height: 570px;
+  /* background-color: #D3DD26; */
+  border-radius: 20px;
+  border: 1px solid #BCBEC0;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.seniorMypage-testResults-title{
+  height: 60px;
+  background-color: #F7D90E;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.seniorMypage-testResults-container{
+  height: 440px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.seniorMypage-testResults-testDate{
+  width: 270px;
+  padding: 20px;
+}
+
+.seniorMypage-testResults-testDate  p{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.seniorMypage-testResults-testName{
+  width: 440px;
+  border-right: 1px solid #BCBEC0;
+  border-left: 1px solid #BCBEC0;
+  padding: 20px;
+}
+
+.seniorMypage-testResults-testName  P{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.seniorMypage-testResults-testDanger{
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.seniorMypage-testResults-testDanger  p{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.seniorMypage-testResults-good{
+  background-color: #0f9bad;
+  padding: 5px;
+  font-size: 24px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seniorMypage-testResults-caution{
+  background-color: #F7941D;
+  padding: 5px;
+  font-size: 24px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seniorMypage-testResults-danger{
+  background-color: #EF4136;
+  padding: 5px;
+  font-size: 24px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.seniorMypage-testResults-footer{
+  text-align: center;
+  color: #BCBEC0;
+  font-size: 19px;
+}
+
+.seniorMypage-footerButton{
+  height: 50px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.seniorMypage-footerButton > button{
+  cursor: pointer;
+}
+
+.secessionButton{
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #EF4136;
+  background-color: #E6E7EB;
+  width: 160px;
+  border-radius: 30px;
+  margin-right: 500px;
+}
+
+.cancelButton{
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  width: 100px;
+  border-radius: 30px;
+  background-color: #A7A9AC;
+  color: white;
+  margin-right: 10px;
+  text-decoration-line: none;
+}
+
+.saveButton{
+  font-size: 20px;
+  width: 200px;
+  background-color: #F7941D;
+  color: white;
+  border-radius: 30px;
+
+}
+
+.seniorBackgroundImg{
+  position: absolute;
+  left: 20px;
+  top: 300px;
+  z-index: -1;
+}
+
+input::placeholder{
+  color: #A7A9AC;
+  font-size: 20px;
+}

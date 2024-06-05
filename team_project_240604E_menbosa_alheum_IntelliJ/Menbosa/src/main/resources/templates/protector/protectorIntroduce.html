@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>protectorIntroduce</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- introduce CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorIntroduce.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/header-ver2NonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/header-ver2Member.css}">
+  <!--  footer CSS  -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <header th:replace="~{/basic/header-ver2 :: header2}"></header>
+
+  <main>
+    <div class="protectorIntroduce-top">
+      <div class="protectorIntroduce-topCnt">
+        <p class="protectorIntroduce-topText">더 쉽고 빠르게 검사하기 위한 가이드</p>
+        <p class="protectorIntroduce-topTitle">당신의 건강은 어떠신가요?</p>
+        <p class="protectorIntroduce-topText">이 테스트는 건강악화를 사전에 예방하자는 취지로 제작 되었습니다.</p>
+        <p class="protectorIntroduce-topText">간단한 질문들에 솔직하게 답변한다면</p>
+        <p class="protectorIntroduce-topText">당신의 건강 악화를 예방할 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="protectorIntroduce-middle">
+      <div class="protectorIntroduce-middleCnt">
+        <div>
+          <img src="/img/protectorIntroduce-Future.png" alt="">
+          <p>질문은 평균 12개,</p>
+          <p>소요시간은 약 5분</p>
+        </div>
+
+        <div>
+          <img src="/img/protectorIntroduce-Stack Of Paper.png" alt="">
+          <p>모든 질문에</p>
+          <p>꼼꼼하게 답변해주세요.</p>
+        </div>
+
+        <div>
+          <img src="/img/protectorIntroduce-Human Research Program.png" alt="">
+          <p>자신에게</p>
+          <p>가장 가까운 답변을 선택하세요.</p>
+        </div>
+
+        <div>
+          <img src="/img/protectorIntroduce-User Male.png" alt="">
+          <p>알흠(謁欽) 회원이라면</p>
+          <p>바로 테스트를 진행할 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="protectorIntroduce-bottom">
+      <div class="protectorIntroduce-bottomCnt">
+        <p>알흠(謁欽) 회원이 아니신가요?</p>
+        <p>아래 “회원 가입하기” 버튼을 통해 가입 후 바로 테스트 진행이 가능합니다!!</p>
+        <p>회원 가입은 매우 간단해요.</p>
+        <div class="protectorIntroduce-start">
+          <a th:href="@{/alheum/survey}">테스트 시작하기</a>
+        </div>
+        <div class="protectorIntroduce-join">
+          <a th:href="@{/alheum/user/join}">회원 가입하기</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

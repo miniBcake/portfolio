@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.protector.postscript.RecomCommentMapper">
+
+    <insert id="insertRecomComment" parameterType="RecomCommentWriteDTO">
+        <selectKey keyProperty="commentRecomNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_COMMENT_RECOM.nextVal FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_COMMENT_RECOM(COMMENT_RECOM_NUM, COMMENT_Recom_DATE, COMMENT_Recom_CONTENTS, BOARD_Recom_NUM, PRO_MEM_NUM)
+        VALUES(#{commentRecomNum}, SYSDATE, #{commentRecomContents}, #{boardRecomNum}, #{proMemNum})
+    </insert>
+
+
+    <select id="selectRecomCommentList" parameterType="Long" resultType="RecomCommentListDTO">
+        ----------------- 댓글 목록 ---------------------
+        SELECT C.COMMENT_Recom_NUM, C.COMMENT_Recom_DATE, C.COMMENT_Recom_CONTENTS, C.BOARD_Recom_NUM, P.PRO_MEM_NAME
+        FROM MBS_COMMENT_Recom C JOIN MBS_PRO_MEMBER P
+                                      ON C.PRO_MEM_NUM = P.PRO_MEM_NUM AND C.BOARD_Recom_NUM = #{boardRecomNum}
+        ORDER BY C.COMMENT_Recom_DATE DESC
+    </select>
+
+    <select id="selectRecomSlice" resultType="RecomCommentListDTO">
+<![CDATA[
+        SELECT COMMENT_Recom_NUM, COMMENT_Recom_CONTENTS, COMMENT_Recom_DATE ,BOARD_Recom_NUM, PRO_MEM_NUM, PRO_MEM_NAME
+        FROM (
+                 SELECT ROWNUM AS RNUM, COMMENT_Recom_NUM, COMMENT_Recom_CONTENTS, COMMENT_Recom_DATE,BOARD_Recom_NUM, PRO_MEM_NUM, PRO_MEM_NAME
+                 FROM (
+                          SELECT C.COMMENT_Recom_NUM, C.COMMENT_Recom_CONTENTS, C.BOARD_Recom_NUM, C.PRO_MEM_NUM, C.COMMENT_Recom_DATE, P.PRO_MEM_NAME
+                          FROM MBS_COMMENT_Recom C   JOIN MBS_PRO_MEMBER P
+                                                          ON C.BOARD_Recom_NUM = #{boardRecomNum} AND C.PRO_MEM_NUM = P.PRO_MEM_NUM
+                          ORDER BY C.COMMENT_Recom_NUM DESC
+                      ) WHERE ROWNUM <= #{criteria.page} * #{criteria.amount} + 1
+             ) WHERE RNUM > (#{criteria.page} - 1) * #{criteria.amount}
+        ]]>
+</select>
+
+    <delete id="deleteRecomComment" parameterType="Long">
+        DELETE FROM MBS_COMMENT_Recom
+        WHERE COMMENT_Recom_NUM = #{commentRecomNum}
+    </delete>
+</mapper>

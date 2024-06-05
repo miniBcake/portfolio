@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-소통상세</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- communicateDetails CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-communicateDetails.css}">
+  <!-- communicateDetails JS -->
+  <script defer type="module" th:src="@{/js/protectorCommunity-communicateDetails.js}" ></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <input type="hidden" id="proMemNum" th:value="${session.proMemNum}">
+    <input type="hidden" id="boardCommuNum" th:value="${detail.boardCommuNum}">
+    <div class="protectorCommunity-communicateDetails-title">
+      <div class="title-top">
+        <p>
+          <span>[소통]</span>
+          <span th:text="${detail.boardCommuTitle}"></span>
+        </p>
+        <th:block th:if="${session.proMemNum == detail.proMemNum}">
+        <div class="menuButton">
+          <img th:src="@{/img/community-menuButton.png}" alt="">
+          <ul class="menuButton-modifyDelete">
+            <li><button type="button" class="modifyButtn" th:data-id="${detail.boardCommuNum}">수정</button></li>
+            <li><button type="button" class="deleteButtn" th:data-id="${detail.boardCommuNum}">삭제</button></li>
+          </ul>
+        </div>
+        </th:block>
+      </div>
+      <div class="title-bottom">
+        <span th:text="${detail.proMemName}"></span>
+        <span th:text="${#temporals.format(detail.boardCommuDate, 'yyyy-MM-dd HH:mm')}"></span>
+      </div>
+    </div>
+
+    <div class="protectorCommunity-communicateDetails-content">
+      <p th:text="${detail.boardCommuContents}"></p>
+      <p class="post-images">
+<!--              이미지 들어갈 공간    -->
+      </p>
+    </div>
+
+    <div class="protectorCommunity-communicateDetails-comments">
+      <div class="comments-top">
+        <p><img th:src="@{/community-commentsLogo.png}" alt=""></p>
+        <span>Comments</span>
+      </div>
+      <ul class="comments-list">
+<!--        댓글 들어갈 공간        -->
+      </ul>
+
+      <div class="protectorCommunity-communicateDetails-commentsInput">
+          <input type="text" id="comment-content" name="commentCommuContents" placeholder="댓글을 남겨보세요" required>
+          <button type="button" class="btn-comment">등록</button>
+      </div>
+    </div>
+
+    <div class="protectorCommunity-communicateDetails-listButton">
+      <a th:href="@{/alheum/community/commuMain}">목록으로</a>
+    </div>
+  </main>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

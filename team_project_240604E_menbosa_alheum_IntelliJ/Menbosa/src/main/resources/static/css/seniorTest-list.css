@@ -1,0 +1,132 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #333;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+
+.seniorTest-list-container{
+  width: 970px;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.seniorTest-list-logo{
+  width: 265px;
+  height: 180px;
+  margin-bottom: 80px;
+}
+
+.seniorTest-list-container-listName{
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding-right: 40px;
+}
+
+.seniorTest-list-container-listName > p{
+  font-size: 30px;
+  margin: auto 0;
+}
+
+.seniorTest-list-container-test{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #DCDCDC;
+  align-items: center;
+}
+
+.seniorTest-list-container-test > *{
+  font-size: 24px;
+}
+
+/*.seniorTest-list-container-test > p{*/
+/*  width: 280px;*/
+/*  text-align: center;*/
+/*}*/
+
+.seniorTest-list-container-testButton{
+  height: 55px;
+  width: 195px;
+  text-align: center;
+  line-height: 55px;
+  background-color: #f47a20;
+  border-radius: 30px;
+}
+
+.seniorTest-list-container-testButton> a{
+  text-decoration-line: none;
+  font-size: 24px;
+  color: white;
+
+}
+
+.seniorTest-list-container-testLevel{
+  width: 85px;
+  height: 57px;
+  color: white;
+  text-align: center;
+  line-height: 57px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.easy{
+  background-color: #27aae1;
+}
+
+.normal{
+  background-color: #f7941d;
+}
+
+.hard{
+  background-color: #ef4136;
+}
+
+.seniorTest-list-container > p{
+  text-align: center;
+  margin: 20px 0;
+  color: #A7A9AC;
+  font-size: 20px;
+}
+
+.seniorBackgroundImg{
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  z-index: -1;
+}

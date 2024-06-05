@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-시설후기상세</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- postscriptDetails CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-postscriptDetails.css}">
+  <!-- postscriptDetails JS -->
+  <script type="module" defer th:src="@{/js/protectorCommunity-postscriptDetails.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <input type="hidden" id="proMemNum" th:value="${session.proMemNum}">
+    <input type="hidden" id="boardRecomNum" th:value="${detail.boardRecomNum}">
+    <div class="protectorCommunity-postscriptDetails-title">
+      <div class="title-top">
+        <p>
+          <span>[시설후기]</span>
+          <span th:text="${detail.boardRecomTitle}"></span>
+        </p>
+        <div class="menuButton">
+          <img src="/img/community-menuButton.png" alt="">
+          <ul class="menuButton-modifyDelete">
+            <a th:href="@{/alheum/community/postModify(boardRecomNum = ${detail.boardRecomNum})}">
+            <li>수정</li>
+            </a>
+            <a th:href="@{/alheum/community/postRemove(boardRecomNum = ${detail.boardRecomNum})}">
+            <li style="color: red">삭제</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="title-bottom">
+        <span th:text="${detail.proMemName}"></span>
+        <span th:text="${#temporals.format(detail.boardRecomDate, 'yyyy-MM-dd HH:mm')}"></span>
+      </div>
+    </div>
+
+    <div class="protectorCommunity-postscriptDetails-content">
+      <p th:text="${detail.boardRecomContents}"></p>
+      <p class="post-images">
+        <!--              이미지 들어갈 공간    -->
+      </p>
+    </div>
+
+    <div class="protectorCommunity-postscriptDetails-comments">
+      <div class="comments-top">
+        <p><img src="/img/community-commentsLogo.png" alt=""></p>
+        <span>Comments</span>
+      </div>
+      <ul class="comments-list">
+<!--        댓글 들어갈 공간 -->
+
+      </ul>
+      <div class="protectorCommunity-postscriptDetails-commentsInput">
+          <input id="recomComment-content" type="text" name="commentRecomContents" placeholder="댓글을 남겨보세요">
+          <button type="submit" class="btn-comment">등록</button>
+      </div>
+    </div>
+
+    <div class="protectorCommunity-postscriptDetails-listButton">
+      <a th:href="@{/alheum/community/postMain}">목록으로</a>
+    </div>
+  </main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/seniorJoin.css}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <script defer th:src="@{/js/seniorJoin.js}"></script>
+</head>
+<body>
+  <main>
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
+    <div class="seniorJoin-container">
+      <div class="seniorJoin-logo"><img th:src="@{/img/senior-alheum_logo.svg}" alt=""></div>
+      <p>회원가입</p>
+      <form method="post">
+<!--        th:action="@{/senior/seniorJoin}"-->
+        <div class="seniorJoin-joinBox">
+          <p>성함</p>
+          <input type="text" name="senMemName" id="seniorName" placeholder="성함을 한글로 입력해주세요">
+          <p>전화번호</p>
+          <div class="seniorJoin-joinBox-seniorPhonenumber-container">
+            <input type="text" name="seniorJoin-firstPhonenumber" id="firstPhonenumber" value="010" disabled>
+            <span> - </span>
+            <input type="text" name="senMemPhoneMid" id="secondPhonenumber" placeholder="1234" maxlength="4">
+            <span> - </span>
+            <input type="text" name="senMemPhoneBack" id="thirdPhonenumber" placeholder="5678" maxlength="4">
+            <button>인증</button>
+          </div>
+          <input type="text" name="senMemCertification" id="certificationNumber" placeholder="인증번호를 입력해주세요">
+          <p>비밀번호</p>
+          <input type="password" name="senMemPassword" id="seniorJoin-Password" placeholder="비밀번호를 입력해주세요">
+          <input type="password" name="senMemPasswordVerify" id="seniorJoin-confirmPassword" placeholder="비밀번호를 다시 한번 입력해주세요">
+          <div class="seniorJoin-agreeContainer">
+            <p>약관동의</p>
+            <div class="seniorJoin-agree">
+              <p>전체 동의</p>
+              <input type="checkbox" id="seniorJoin-agreeAll" name="seniorJoin-agreeAll">
+            </div>
+            <div class="seniorJoin-agree" id="seniorJoin-agree1" name="seniorJoin-agree1">
+              <p>서비스 이용약관 동의</p>
+              <input type="checkbox">
+            </div>
+            <div class="seniorJoin-agree" id="seniorJoin-agree2" name="seniorJoin-agree2">
+              <p>개인정보 수집 및 이용 동의</p>
+              <input type="checkbox">
+            </div>
+            <div class="seniorJoin-agree" id="seniorJoin-agree3" name="seniorJoin-agree3">
+              <p>마케팅 활용 동의</p>
+              <input type="checkbox">
+            </div>
+          </div>
+          <button type="submit"  class="seniorJoin-joinButton">회원가입</button>
+        </div>
+      </form>
+
+    </div>
+  </main>
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

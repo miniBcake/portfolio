@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hober: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+.exfooter{
+  height: 200px;
+  background-color: aqua;
+}
+
+.seniorTest-container{
+  width: 970px;
+  margin: 0 auto;
+}
+
+.seniorTest-header{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.seniorTest-header > a > img{
+  width: 110px;
+  height: 75px;
+  margin: auto 0;
+}
+
+.seniorTest-header-title{
+  font-size: 40px;
+  margin: auto 0;
+  margin-left: 20px;
+}
+
+.seniorTest-container > p{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.seniorTest-container > img{
+  width: 970px;
+  height: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.seniorTest-radioButton{
+  width: 700px;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.seniorTest-radioButton > div{
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.test-radio{
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  position: relative;
+  top:5px;
+}
+
+.seniorTest-buttons{
+  height: 80px;
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+/*.seniorTest-button{*/
+/*  width: 300px;*/
+/*  border-radius: 50px;*/
+/*  background-color: #DCDBDB;*/
+/*}*/
+
+.seniorTest-button > button{
+  font-size: 30px;
+  text-decoration-line: none;
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 80px;
+  width: 300px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  /*background-color: #DCDBDB;*/
+}
+
+.back{
+  background-color: #A0A0A0;
+}
+
+.next{
+  background-color: #FE7A15;
+}
+
+.seniorTest-container > div > p{
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+
+/* 모달창 */
+
+.protector-result-background{
+  background-color: rgba(26, 26, 26, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: none;
+}
+
+/* 모달창 */
+.protector-result-modalBox{
+  /* 모달 창 높이 위치는 적절하게 잡아주세요 */
+  background-color: white;
+  margin: auto;
+  margin-top: 200px;
+  width: 900px;
+  height: 640px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+  /* display: none; */
+}
+
+
+/* 하단 경고메세지 작아도 됨 */
+.protector-result-warningText{
+  font-size: 14px;
+  color: var(--font-color-grey);
+}
+
+.protector-result-logoImg > img{
+  width: 230px;
+  height: 160px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.protector-result-colorButtonDiv{
+  width: 120px;
+  height: 50px;
+  background-color: #27aae1;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.protector-result-explanation{
+  font-size: 24px;
+}
+
+.protector-result-movementButton{
+  width: 195px;
+  height: 55px;
+  background-color: #FE7A15;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.protector-result-movementButton > a{
+  color: white;
+  text-decoration-line: none;
+  line-height: 55px;
+  font-size: 20px;
+}
+
+.protector-result-gohome{
+  width: 195px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.protector-result-gohome > a{
+  color: #FE7A15;
+  text-decoration-line: none;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.protector-result-warningText{
+  color: #A7A9AC;
+  font-size: 16px;
+}
+
+.caution{
+  background-color: #F7941D;
+}
+
+.danger{
+  background-color: #EF4136;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.protector.communicate.CommentMapper">
+
+<insert id="insertComment" parameterType="CommentWriteDto">
+    <selectKey keyProperty="commentCommuNum" resultType="Long" order="BEFORE">
+        SELECT SEQ_COMMENT_COMMU.nextVal FROM DUAL
+    </selectKey>
+    INSERT INTO MBS_COMMENT_COMMU(COMMENT_COMMU_NUM, COMMENT_COMMU_DATE, COMMENT_COMMU_CONTENTS, BOARD_COMMU_NUM, PRO_MEM_NUM)
+    VALUES(#{commentCommuNum}, SYSDATE, #{commentCommuContents}, #{boardCommuNum}, #{proMemNum})
+</insert>
+
+
+<select id="selectCommentList" parameterType="Long" resultType="CommentListDto">
+----------------- 댓글 목록 ---------------------
+SELECT C.COMMENT_COMMU_NUM, C.COMMENT_COMMU_DATE, C.COMMENT_COMMU_CONTENTS, C.BOARD_COMMU_NUM, P.PRO_MEM_NAME
+FROM MBS_COMMENT_COMMU C JOIN MBS_PRO_MEMBER P
+ON C.PRO_MEM_NUM = P.PRO_MEM_NUM AND C.BOARD_COMMU_NUM = #{boardCommuNum}
+ORDER BY C.COMMENT_COMMU_DATE DESC
+</select>
+
+<select id="selectSlice" resultType="CommentListDto">
+<![CDATA[
+    SELECT COMMENT_COMMU_NUM, COMMENT_COMMU_CONTENTS, COMMENT_COMMU_DATE ,BOARD_COMMU_NUM, PRO_MEM_NUM, PRO_MEM_NAME
+    FROM (
+             SELECT ROWNUM AS RNUM, COMMENT_COMMU_NUM, COMMENT_COMMU_CONTENTS, COMMENT_COMMU_DATE,BOARD_COMMU_NUM, PRO_MEM_NUM, PRO_MEM_NAME
+             FROM (
+                      SELECT C.COMMENT_COMMU_NUM, C.COMMENT_COMMU_CONTENTS, C.BOARD_COMMU_NUM, C.PRO_MEM_NUM, C.COMMENT_COMMU_DATE, P.PRO_MEM_NAME
+                      FROM MBS_COMMENT_COMMU C   JOIN MBS_PRO_MEMBER P
+                                                      ON C.BOARD_COMMU_NUM = #{boardCommuNum} AND C.PRO_MEM_NUM = P.PRO_MEM_NUM
+                      ORDER BY C.COMMENT_COMMU_NUM DESC
+                  ) WHERE ROWNUM <= #{criteria.page} * #{criteria.amount} + 1
+         ) WHERE RNUM > (#{criteria.page} - 1) * #{criteria.amount}
+        ]]>
+</select>
+
+    <delete id="deleteComment" parameterType="Long">
+        DELETE FROM MBS_COMMENT_COMMU
+        WHERE COMMENT_COMMU_NUM = #{commentCommuNum}
+    </delete>
+
+
+
+</mapper>

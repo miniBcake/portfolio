@@ -1,0 +1,137 @@
+.protectorMypage-container-box{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.protectorMypage-addtext{
+  font-size: 14px;
+  color: var(--color-main);
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  z-index: 1;
+}
+.protectorMypage-addtext:hover{color: var(--color-main-hover);}
+
+.protectorMypage-arrow{
+ position: absolute;
+ top: 160px;
+ z-index: 1;
+
+ font-size: 25px;
+ text-align: center;
+ line-height: 33px;
+ color: var(--font-lightgrey);
+ background-color: var(--color-back-white);
+ display: inline-block;
+ width: 35px;
+ height: 35px;
+ border-radius: 30px;
+ box-shadow: 0px 1px 3px 1px var(--color-shadow);
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.protectorMypage-arrow:hover{
+  background-color: var(--color-sub-gree);
+  color: var(--color-back-white);
+}
+.mypage-arrow-right{left: 665px;}
+.mypage-arrow-left{left: -20px;}
+#protectorMypage-mycontents .protectorMypage-arrow{top: 75px;}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.mypage-box-half{min-width: 316px; max-width: 316px;}
+#protectorMypage-seniorinfo article{margin-top: 16px;}
+
+.mypage-notblock{
+  display: inline;
+  float: right;
+}
+
+.mypage-box-textsmall{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+    align-items: end;
+}
+.mypage-box-textsmall span{
+  font-size: 12px;
+  color: var(--font-lightgrey);
+}
+
+.deleteBoard{
+    cursor: pointer;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+
+#protectorMypage-seniorinfo article > div{
+  background-color: var(--color-back-lightgrey);
+  border: 1px solid var(--color-table-grey);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#protectorMypage-seniorinfo article > div > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+.protectorMypage-mycontents-clickmenu,
+.protectorMypage-seniorinfo-clickmenu{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--color-back-white);
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 3px 2px var(--color-shadow);
+  overflow: hidden;
+}
+.protectorMypage-mycontents-clickmenu li,
+.protectorMypage-seniorinfo-clickmenu li{
+  min-width: fit-content;
+  padding: 6px 15px;
+  min-width: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+.protectorMypage-seniorinfo-clickmenu li{
+  min-width: 90px; 
+}
+
+.protectorMypage-mycontents-clickmenu li:hover,
+.protectorMypage-seniorinfo-clickmenu li:hover{
+  background-color: var(--color-back-lightgrey);
+}
+
+.protectorMypage-container-box{
+  position: relative;
+  left: 0;
+}
+
+
+.seniorinfo-top{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 0 0;
+    padding: 2px 5px 0 5px;
+}
+
+.seniorinfo-warning{
+    font-size: 14px;
+    /*color: red;*/
+    color: var(--font-color-grey);
+    cursor: pointer;
+}
+
+.seniorinfo-details{
+    font-size: 14px;
+    color: var(--font-color-grey);
+}
+

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--font-color-default);
+  font-size: 16px;
+  /* 텍스트긁기 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+main{
+  width: 970px;
+  margin: 40px auto;
+}
+
+h2{
+  text-align: center;
+  font-size: 32px;
+  margin: 20px auto 40px;
+  font-weight: 500;
+}
+
+
+
+/* 글쓰기 제목부분 */
+.write-title{
+  padding: 20px 0;
+  border-top: 1px solid var(--color-disabled);
+  border-bottom: 1px solid var(--color-disabled);
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.write-title > label {
+  margin-right: 30px;
+}
+
+.write-title > input{
+  width: 70%;
+  border: 1px solid var(--color-disabled);
+  border-radius: 8px;
+}
+
+
+/* 글쓰기 내용 */
+#write-content{
+  width: 100%;
+  height: 500px;
+  resize: none;
+  border: 1px solid var(--color-disabled);
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
+/* 글쓰기 이미지 파일 삽입 */
+.write-inputFile{
+  padding: 20px 0;
+  border-top: 1px solid var(--color-disabled);
+  border-bottom: 1px solid var(--color-disabled);
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+}
+
+
+#write-file{
+  width: 70%;
+  border: 1px solid var(--color-disabled);
+  border-radius: 10px;
+}
+
+
+#write-file::-webkit-file-upload-button{
+  background-color: var(--color-main);
+  color: var(--font-color-white);
+  border: none;
+  padding: 5px 10px;
+}
+
+
+.write-inputFile > button{
+  padding: 0 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.write-buttons{
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+
+.write-buttons > a{
+display: inline-block;
+width: 150px;
+padding: 10px 0;
+border: 1px solid var(--color-disabled);
+margin-right: 40px;
+border-radius: 30px;
+}
+
+.write-buttons > button{
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--color-main);
+  color: white;
+}

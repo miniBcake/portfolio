@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.protector.mypage.MypageMapper">
+
+    <select id="selectMyResult" resultType="ProMypageResultDTO">
+        --설문조사결과 조회
+        SELECT RESULT_SURVEY_DATE
+             , RESULT_SURVEY_SCORE
+        FROM MBS_RESULT_SURVEY
+        WHERE PRO_MEM_NUM = #{proMemNum}
+        ORDER BY RESULT_SURVEY_DATE DESC
+    </select>
+
+    <select id="selectMySenInfo" resultType="ProMypageSenInfoDTO">
+        --시니어정보 조회
+        SELECT SEN_MEM_NAME
+             , s.SEN_MEM_NUM
+             , SEN_MEM_BIRTH
+             , SEN_MEM_PHONE_MID
+             , SEN_MEM_PHONE_BACK
+             , F.TEST_RESULT_SCORE
+        FROM MBS_SEN_MEMBER S
+                 LEFT OUTER JOIN (SELECT TEST_RESULT_SCORE
+                                       , SEN_MEM_NUM
+                                  FROM (SELECT TEST_RESULT_SCORE
+                                             , SEN_MEM_NUM
+                                             , RANK() OVER(PARTITION BY SEN_MEM_NUM ORDER BY TEST_RESULT_DATE ASC, SEN_MEM_NUM ASC) AS RANKSCORE
+                                        FROM MBS_TEST_RESULT)
+                                  WHERE RANKSCORE = 1) F
+                                 ON S.SEN_MEM_NUM = F.SEN_MEM_NUM
+        WHERE PRO_MEM_NUM = #{proMemNum}
+        ORDER BY S.SEN_MEM_NUM ASC
+    </select>
+
+    <select id="selectMyBoard" resultType="ProMypageBoardDTO">
+        --게시물 불러오기
+        SELECT BOARDTITLE
+             , BOARDDATE
+             , DIVISION
+             , BOARDNUM
+        FROM (SELECT BOARD_COMMU_TITLE BOARDTITLE
+                   , BOARD_COMMU_DATE  BOARDDATE
+                   , BOARD_COMMU_NUM BOARDNUM
+                   , '100' AS          division
+              FROM MBS_BOARD_COMMU mbc
+              WHERE PRO_MEM_NUM = #{proMemNum}
+              UNION ALL
+              SELECT BOARD_RECOM_TITLE BOARDTITLE
+                   , BOARD_RECOM_DATE  BOARDDATE
+                   , BOARD_RECOM_NUM BOARDNUM
+                   , '200' AS          division
+              FROM MBS_BOARD_RECOM mbr
+              WHERE PRO_MEM_NUM = #{proMemNum})
+        ORDER BY BOARDDATE DESC
+    </select>
+
+    <select id="selectMyInfo" resultType="ProMypageInfoDTO">
+        -- 개인정보 불러오기
+        SELECT PRO_MEM_NAME
+             , PRO_MEM_EMAIL
+             , PRO_MEM_PHONE_MID
+             , PRO_MEM_PHONE_BACK
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </select>
+
+    <select id="selectMySenDetails" resultType="ProMypageSenDetailsDTO">
+        SELECT SEN_MEM_NAME
+            , SEN_MEM_BIRTH
+            , SEN_MEM_PHONE_MID
+            , SEN_MEM_PHONE_BACK
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </select>
+
+    <update id="updateMyModify" parameterType="ProMypageModifyDTO">
+        --개인정보수정값 업데이트
+        UPDATE MBS_PRO_MEMBER
+        SET PRO_MEM_EMAIL           = #{proMemEmail},
+            PRO_MEM_PASSWORD        = #{proMemPassword},
+            PRO_MEM_PASSWORD_VERIFY = #{proMemPasswordVerify}
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </update>
+
+    <update id="updateOnlyEmail" parameterType="String">
+            --이메일만 업데이트
+        UPDATE MBS_PRO_MEMBER
+        SET PRO_MEM_EMAIL = #{proMemEmail}
+        WHERE PRO_MEM_NUM = #{proMemNumString}
+    </update>
+
+    <select id="selectCheckPassword" parameterType="long" resultType="String">
+        --- [ ]  **SELECT**비밀번호 유효성검사 셀렉트
+        SELECT PRO_MEM_PASSWORD
+        FROM MBS_PRO_MEMBER mpm
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </select>
+
+    <select id="selectFindSenMem" parameterType="ProMypageFindSenDTO" resultType="Long">
+        --- [ ]  **SELECT**어르신연결정보셀렉트
+        SELECT SEN_MEM_NUM
+        FROM MBS_SEN_MEMBER
+        WHERE '010'||SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK = #{senMemPhoneNum}
+          AND SEN_MEM_CERTIFICATION = #{senMemCertification}
+    </select>
+
+    <select id="selectFindEmail" parameterType="String" resultType="String">
+        --- [ ]  **SELECT** 이메일 유효성 검사
+        SELECT 'duplication'
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_EMAIL = #{proMemEmail}
+    </select>
+
+    <update id="updateSenAddNew" parameterType="ProMypageSenConnecDTO">
+        --- [ ]  **UPDATE**시니어 추가(연결) 업데이트
+        UPDATE MBS_SEN_MEMBER
+        SET PRO_MEM_NUM = #{proMemNum}
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </update>
+
+    <update id="updateSenAddClear" parameterType="long">
+        --- [ ]  **UPDATE**시니어 연결 삭제
+        UPDATE MBS_SEN_MEMBER
+        SET PRO_MEM_NUM = NULL
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </update>
+    
+    <delete id="deleteProMem" parameterType="Long">
+        --- [ ]  **DELETE**보호자계정삭제
+        DELETE
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </delete>
+    
+<!--    ///////////////sms 인증 회원확인, 컬럼저장쿼리/////////////////////////////////////////////////////////////-->
+
+    <select id="selectProExi" resultType="Long" parameterType="String">
+        --- [ ]  **SELECT**보호자연결정보셀렉트
+        SELECT PRO_MEM_NUM
+        FROM MBS_PRO_MEMBER
+        WHERE PRO_MEM_NAME = #{name}
+          AND '010'||PRO_MEM_PHONE_MID || PRO_MEM_PHONE_BACK = #{phoneNum}
+    </select>
+
+    <select id="selectSenExi" resultType="Long" parameterType="String">
+        --- [ ]  **SELECT**보호자연결정보셀렉트
+        SELECT SEN_MEM_NUM
+        FROM MBS_SEN_MEMBER
+        WHERE SEN_MEM_NAME = #{name}
+          AND '010'||SEN_MEM_PHONE_MID || SEN_MEM_PHONE_BACK = #{phoneNum}
+    </select>
+    
+    <update id="updateProCerti" parameterType="String">
+        UPDATE MBS_PRO_MEMBER
+        SET PRO_MEM_CERTIFICATION = #{smsMessagePost}
+        WHERE PRO_MEM_NUM = #{proMemNum}
+    </update>
+
+    <update id="updateSenCerti" parameterType="String">
+        UPDATE MBS_SEN_MEMBER
+        SET SEN_MEM_CERTIFICATION = #{smsMessagePost}
+        WHERE SEN_MEM_NUM = #{senMemNum}
+    </update>
+
+</mapper>

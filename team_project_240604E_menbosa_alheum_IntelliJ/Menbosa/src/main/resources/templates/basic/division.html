@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>division-nonMember</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> 
+  <!-- division CSS -->
+  <link rel="stylesheet" th:href="@{/css/division.css}">
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <!-- 구분 페이지 -->
+    <div class="division-container">
+      <div class="division-textCnt">
+        <p>어떤 사람이 이용하시나요?</p>
+      </div>
+      <!-- 컨테이너 -->
+      <div class="division-imgCnt">
+        <!-- 보호자 -->
+        <div class="division-imgW">
+          <a th:href="@{/alheum/user/login}">
+            <img src="/img/basic-divisionW.png" alt="">
+            <p>보호자</p>
+          </a>
+        </div>
+        <!-- 어르신 -->
+        <div class="division-imgM">
+          <a th:href="@{#}">
+            <img src="/img/basic-divisionM.png" alt="">
+            <p>어르신</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

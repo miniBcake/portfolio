@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1:1문의 글쓰기</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- inquiryWrite CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorMypage-inquiryWrite.css}">
+  <!-- inquiryWrite JS -->
+  <script defer th:src="@{/js/protectorMypage-inquiryWrite.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+  <main>
+    <h2>1:1문의</h2>
+    <form action="" method="post">
+      <div class="inquiryWrite-title">
+        <label for="title">제목</label>
+        <input type="text" name="boardInquTitle" id="title" required>
+      </div>
+      <textarea name="boardInquContents" id="inquiryWrite-content" required></textarea>
+      <div class="inquiryWrite-buttons">
+        <a th:href="@{/alheum/inquiry}">취소</a>
+        <button>작성완료</button>
+      </div>
+    </form>
+  </main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

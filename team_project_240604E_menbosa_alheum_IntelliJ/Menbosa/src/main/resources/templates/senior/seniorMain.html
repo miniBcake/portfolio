@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/seniorMain.css}"/>
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <main>
+    <img th:src="@{/img/seniorBackgroundImg.png}" alt="" class="seniorBackgroundImg">
+    <div class="seniorMain-container">
+      <img th:src="@{/img/senior-alheum_logo.svg}" alt="" class="seniorMain-logo">
+      <p class="seniorMain-welcome" th:text="${session.senMemName} + '님 어서오세요'"></p>
+      <div class="seniorMain-menus">
+        <div class="seniorMain-myInfo">
+          <a  th:href="@{/alheum/senUser/passwordVerify}">
+          <p class="seniorMain-myInfo-title">내 정보 보기</p>
+          <hr>
+          <p class="seniorMain-myInfo-menu">내 정보 수정하기</p>
+          <p class="seniorMain-myInfo-menu">보호자 등록/변경하기</p>
+          <p class="seniorMain-myInfo-menu">검사결과 모아보기</p>
+          </a>
+          
+        </div>
+        <div class="seniorMain-menus-right">
+          <div class="seniorMain-menu-test">
+            <a th:href="@{/alheum/senTest/testList}">검사하러가기</a>
+            <a href="./seniorTest-list.html">&gt</a>
+          </div>
+          <div class="seniorMain-menu-account">
+            <div><a  class="seniorMain-menu-logout" th:href="@{/alheum/senUser/logout}">로그아웃</a></div>
+            <div><a  class="seniorMain-menu-login" th:href="@{/alheum/senUser/proLogin}">보호자 로그인</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

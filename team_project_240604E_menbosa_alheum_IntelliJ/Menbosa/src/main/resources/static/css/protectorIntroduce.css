@@ -1,0 +1,125 @@
+/* 기본 설정 */
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 소개 메인 */
+.protectorIntroduce-top {
+  height: 400px;
+  background-color: var(--color-main);
+  text-align: center;
+}
+
+.protectorIntroduce-top p {
+  color: white;
+}
+
+.protectorIntroduce-topCnt {
+  position: relative;
+  top: 80px;
+}
+
+.protectorIntroduce-topTitle {
+  font-size: 40px;
+  margin: 50px 0; 
+}
+
+.protectorIntroduce-middleCnt {
+  width: 970px;
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.protectorIntroduce-middle div {
+  text-align: center;
+}
+
+.protectorIntroduce-bottom {
+  height: 400px;
+  background-color: #f2f2f2;
+}
+
+.protectorIntroduce-bottomCnt {
+  width: 970px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+
+.protectorIntroduce-bottomCnt p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.protectorIntroduce-start,
+.protectorIntroduce-join {
+  width: 500px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 1px 2px lightgrey;
+}
+
+.protectorIntroduce-start {
+  background-color: var(--color-main);
+}
+
+.protectorIntroduce-start:hover {
+  background-color: var(--color-main-hover);
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+  cursor: pointer;
+}
+
+.protectorIntroduce-join {
+  background-color: rgb(35, 35, 35);
+}
+
+.protectorIntroduce-join:hover {
+  background-color: rgb(40, 40, 40);
+  box-shadow: 0 0 4px 2px rgb(40, 40, 40);
+  cursor: pointer;
+}
+
+.protectorIntroduce-bottomCnt a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1문의</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- inquiryList CSS -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-inquiryList.css}">
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+<main>
+    <h2 class="protectorMypage-inquiry-title">1:1 문의</h2>
+    <div class="protectorMypage-inquiry-notice">
+        <p class="protectorMypage-inquiry-notice-title">
+            <span>순번</span>
+            <span>제목</span>
+            <span>답변여부</span>
+            <span>등록일</span>
+        </p>
+        <ul>
+            <li th:each="list:${proInqList}">
+                <span th:text="${list.boardInquNum}"></span>
+                <a th:href="@{/alheum/inquiry/details (boardInquNum=${list.boardInquNum})}"
+                   th:text="${list.boardInquTitle}">보고싶다</a>
+                <span>답변완료</span>
+                <span th:text="${#temporals.format(list.boardInquDate, 'yyyy-MM-dd')}">2024-05-11</span>
+            </li>
+        </ul>
+    </div>
+    <div class="protectorMypage-inquiry-writeButton">
+        <a th:href="@{/alheum/mypage}" class="mypage-undo">돌아가기 &#10095;</a>
+        <a th:href="@{/alheum/inquiry/write}">글쓰기</a>
+    </div>
+
+    <!-- 페이징 처리 -->
+    <div class="page-container">
+        <ul class="page-box">
+            <a th:href="@{/alheum/community/commuMain(page=${page.startPage - 1})}" class="page-a" th:if="${page.prev}">
+                <li class="page-num prev"> &lt </li>
+            </a>
+            <th:block th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+                <a th:href="@{/alheum/inquiry (page=${i})}" class="page-a">
+                    <li class="page-num" th:classappend="${i == page.criteria.page ? 'active' : ''}" th:text="${i}"></li>
+                </a>
+            </th:block>
+
+            <a th:href="@{/alheum/inquiry (page=${page.endPage + 1})}" class="page-a" th:if="${page.next}">
+                <li class="page-num next"> &gt </li>
+            </a>
+        </ul>
+    </div>
+</main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>protectorMain</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- main CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorMain-mainNonMember.css}">
+  <!-- main JS -->
+  <script defer th:src="@{/js/protectorMain-mainNonMember.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/header-ver2NonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/header-ver2Member.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+  <header th:replace="~{/basic/header-ver2 :: header2}"></header>
+  
+  <main>
+    <!-- 메인 컨테이너 -->
+    <div class="protectorMain">
+      <!-- 메인 상단 -->
+      <div class="protectorMain-topCnt">
+        <!-- 배경 -->
+        <div class="protectorMain-topImg">
+          <div class="protectorMain-topText">
+            <p>"알흠(謁欽)"</p>
+            <p>
+              "알리다" 와 "공경"을 합친 말로,
+              <br>
+              윗사람을 공경하자는 마음을 널리 퍼트리자는 의미를 담고 있습니다.
+              <br>
+              대표 상징인 지문은 공경하는 마음을 변하지 않겠다는 의지를 보여줍니다.
+            </p>
+          </div>
+          <img src="/img/protectorMain-backgroundImg.png" alt="">
+        </div>
+      </div>
+      <!-- 상단 메뉴 바 -->
+      <div class="protectorMain-menubar">
+        <ul class="protectorMain-menubarCnt">
+          <li>
+            <a th:href="@{#}">인지기능검사</a>
+          </li>
+
+          <p>|</p>
+
+          <li>
+            <a th:href="@{#}">상태진단설문</a>
+          </li>
+
+          <p>|</p>
+
+          <li>
+            <a th:href="@{#}">검사결과</a>
+          </li>
+
+          <p>|</p>
+
+          <li>
+            <a th:href="@{#}">자주묻는질문</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 메인 하단 -->
+      <div class="protectorMain-bottomCnt">
+        <!-- 공지사항 -->
+        <div class="protectorMain-notice">
+          <div class="protectorMain-noticeMove">
+            <p>공지사항</p>
+            <div class="protectorMain-noticeMoveBtn">
+              <button>
+                <img src="/img/protectorMain-prev.png" alt="">
+              </button>
+              <button>
+                <img src="/img/protectorMain-next.png" alt="">
+              </button>
+            </div>
+          </div>
+
+          <div class="protectorMain-noticebanner">
+            <ul class="protectorMain-noticeCnt">
+              <li>
+                <a th:href="@{#}"></a>
+              </li>
+
+              <li>
+                <a th:href="@{#}"></a>
+              </li>
+
+              <li>
+                <a th:href="@{#}"></a>
+              </li>
+
+              <li>
+                <a th:href="@{#}"></a>
+              </li>
+
+              <li>
+                <a th:href="@{#}"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 광고 배너 -->
+        <div class="protectorMain-banner">
+          <div class="protectorMain-bannerMove">
+            <button>
+              <img src="/img/protectorMain-prev.png" alt="">
+            </button>
+            <button>
+              <img src="/img/protectorMain-next.png" alt="">
+            </button>
+          </div>
+
+          <div class="protectorMain-bannerCnt">
+            <ul class="protectorMain-bannerImg">
+              <li>
+                <a th:href="@{#}">
+                  <img src="/img/protectorMain-bannerImg.png" alt="">
+                </a>
+              </li>
+
+              <li>
+                <a th:href="@{#}">
+                  <img src="/img/protectorMain-bannerImg.png" alt="">
+                </a>
+              </li>
+
+              <li>
+                <a th:href="@{#}">
+                  <img src="/img/protectorMain-bannerImg.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

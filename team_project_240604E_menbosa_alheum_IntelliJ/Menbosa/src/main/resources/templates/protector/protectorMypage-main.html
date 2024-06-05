@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>myPage-main</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"/>
+    <!-- myPage-main css -->
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/protectorMypage-main.css}"/>
+    <!-- myPage-main js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer th:src="@{/js/protectorMypage-aside-common.js}"></script>
+    <script defer th:src="@{/js/protectorMypage-main.js}"></script>
+    <!-- header CSS -->
+    <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+    <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+<section id="protectorMypage">
+    <aside>
+        <ul>
+            <a th:href="@{/alheum/mypage}">
+                <li>마이페이지</li>
+            </a>
+            <a th:href="@{/alheum/mypage/check}">
+                <li>개인정보 수정</li>
+            </a>
+            <a th:href="@{/alheum/inquiry}">
+                <li>1:1문의</li>
+            </a>
+            <li id="mypage-asidelogout" class="mypage-warningsecession">로그아웃</li>
+            <li id="mypage-asidesecession" class="mypage-warningsecession">탈퇴하기</li>
+        </ul>
+    </aside>
+    <main>
+        <!-- 내가 작성한 글 -->
+        <div id="protectorMypage-mycontents" class="mypage-subtitle-box">
+            작성한 글
+            <div class="protectorMypage-arrow mypage-arrow-right">&#10095;</div>
+            <div class="protectorMypage-arrow mypage-arrow-left">&#10094;</div>
+            <!-- 클릭메뉴S -->
+            <div class="protectorMypage-mycontents-clickmenu">
+                <ul>
+                    <a th:href="@{/alheum/community/commuModify}">
+                        <li>수정</li>
+                    </a>
+                    <li class="mypage-import">삭제</li>
+                </ul>
+            </div>
+            <!-- 클릭메뉴E -->
+        </div>
+        <section
+                id="protectorMypage-mycontents-container"
+                class="mypage-contents-container"
+        >
+            <div id="protectorMypage-mycontents-slidbox" class="protectorMypage-container-box">
+                <article class="mypage-box-half" th:each="board:${MyBoardList}">
+                    <!-- 클릭시 수정 삭제 js -->
+                    <p th:text="${board.boardTitle}"></p>
+                    <div class="mypage-box-textsmall">
+                        <span>
+                            <span th:if="${board.division}==100">소통 게시판 </span>
+                            <span th:if="${board.division}==200">시설후기 게시판 </span>
+                            <span th:text="${#temporals.format(board.boardDate, '· yyyy.MM.dd.')}"></span>
+                        </span>
+                        <span>
+                            <a th:if="${board.division}==100" th:href="@{/alheum/community/commuModify (boardCommuNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <a th:if="${board.division}==200" th:href="@{/alheum/community/postModify (boardRecomNum=${board.boardNum})}"><span>수정 |</span></a>
+                            <span class="deleteBoard" th:attr="data-division=${board.division}, data-board=${board.boardNum}"> 삭제</span>
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- 어르신 관리 -->
+        <div class="mypage-subtitle-box" id="protectorMypage-seniorinfo-tab">
+            어르신 관리
+            <div class="protectorMypage-arrow mypage-arrow-right">&#10095;</div>
+            <div class="protectorMypage-arrow mypage-arrow-left">&#10094;</div>
+            <!-- 클릭메뉴S -->
+            <div class="protectorMypage-seniorinfo-clickmenu">
+                <ul>
+                    <a th:href="@{/alheum/mypage/seninfo}">
+                        <li>상세보기</li>
+                    </a>
+                    <li class="mypage-import">동록해제</li>
+                </ul>
+            </div>
+            <!-- 클릭메뉴E -->
+        </div>
+        <section id="protectorMypage-seniorinfo" class="mypage-contents-container">
+            <a th:href="@{/alheum/mypage/seniorAdd}" class="protectorMypage-addtext">추가등록 &#10095;</a>
+            <div class="protectorMypage-container-box">
+                <article class="mypage-box-half" th:each="info:${MySenInfoList}">
+                    <!-- 클릭시 상세보기 삭제 js -->
+                    <div>
+                        <div><span>성함</span><span th:text="${info.senMemName}"></span></div>
+                        <div><span>생년월일</span><span
+                                th:text="${#temporals.format(info.senMemBirth, 'yyyy-MM-dd')}"></span></div>
+                        <div><span>전화번호</span><span>010-<span th:text="${info.senMemPhoneMid}"></span>-<span
+                                th:text="${info.senMemPhoneBack}"></span></span></div>
+                        <div>
+                            <span>최근검사결과</span>
+                            <span th:if="${info.testResultScore} == 0"
+                                  class="mypage-state-box mypage-state-not">없음</span>
+                            <span th:if="${info.testResultScore} == 4"
+                                  class="mypage-state-box mypage-state-good">양호</span>
+                            <span th:if="${info.testResultScore} == 3"
+                                  class="mypage-state-box mypage-state-mid">주의</span>
+                            <span th:if="${info.testResultScore} >= 1 and ${info.testResultScore} <= 2"
+                                  class="mypage-state-box mypage-state-bad">위험</span>
+                        </div>
+                    </div>
+                    <span class="seniorinfo-top">
+                        <a th:href="@{/alheum/mypage/seninfo (senMemNum=${info.senMemNum})}" class="seniorinfo-details">상세보기</a>
+                        <a th:attr="data-user=${info.senMemNum}" class="seniorinfo-warning">연결해제</a>
+                    </span>
+                </article>
+            </div>
+        </section>
+        <!-- 보호자 설문 내역 테이블 -->
+        <div class="mypage-subtitle-box">보호자 설문 내역</div>
+        <section class="mypage-contents-container">
+            <article>
+                <div class="mypage-table">
+                    <div class="mypage-tr">
+                        <p class="mypage-th">검사날짜</p>
+                        <p class="mypage-th">검사명</p>
+                        <p class="mypage-th">위험도</p>
+                    </div>
+                    <div class="mypage-tr" th:each="test : ${MyResultList}">
+                        <p class="mypage-td" th:text="${#temporals.format(test.resultSurveyDate, 'yy년 M월 d일')}"></p>
+                        <p class="mypage-td">어르신 진단 보호자 설문</p>
+                        <p class="mypage-td">
+<!--                            검사 시작만 해도 점수 1이 부여됨 나중에 검사 결과 없음을 띄우게 된다면 점수 0으로 검증-->
+                            <span th:if="${test.resultSurveyScore} >= 1 and ${test.resultSurveyScore} < 6"
+                                  class="mypage-state-box mypage-state-good">양호</span>
+                            <span th:if="${test.resultSurveyScore} >= 6 and ${test.resultSurveyScore} < 11"
+                                  class="mypage-state-box mypage-state-mid">주의</span>
+                            <span th:if="${test.resultSurveyScore} >= 11 and ${test.resultSurveyScore} <= 31"
+                                  class="mypage-state-box mypage-state-bad">위험</span>
+                        </p>
+                    </div>
+                    <p class="mypage-warning">
+                        이 검사의 결과값은 참고용입니다. 전문가와 상담하지 않고 결과를
+                        임의로 해석하거나 처치를 진행하지마세요.
+                    </p>
+                </div>
+            </article>
+        </section>
+    </main>
+</section>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티-자주하는 질문</title>
+  <!-- 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- questionMain CSS -->
+  <link rel="stylesheet" th:href="@{/css/protectorCommunity-questionMain.css}">
+  <!-- questionMain JS -->
+  <script defer th:src="@{/js/protectorCommunity-questionMain.js}"></script>
+  <!-- header CSS -->
+  <link rel="stylesheet" th:href="@{/css/headerNonMember.css}">
+  <link rel="stylesheet" th:href="@{/css/headerMember.css}">
+  <!-- footer CSS -->
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+<header th:replace="~{/basic/header-ver1 :: header1}"></header>
+
+  <main>
+    <h2 class="protectorCommunity-question-title">자주하는 질문</h2>
+    <ul class="protectorCommunity-question-tabMenu">
+      <li><a th:href="@{/alheum/community/main}" >공지</a></li>
+      <li><a th:href="@{/alheum/community/commuMain}">소통</a></li>
+      <li><a th:href="@{/alheum/community/postMain}">시설후기</a></li>
+      <li><a th:href="@{/alheum/community/commuQuestion}">자주하는 질문</a></li>
+    </ul>
+    <ul class="protectorCommunity-question-list">
+      <li>
+        <div class="question">
+          <div class="question-title">
+            <span class="question-q">Q</span>
+            <span>질문할 게 있어요 서혁씨 몇시에 오실건가요</span>
+          </div>
+          <span class="downButton"><img th:src="@{/img/community-downButton.png}" alt=""></span>
+        </div>
+        <p class="answer">
+          <span class="answer-a">A</span>
+          <span>확신을 못하겠어요..</span>
+        </p>
+      </li>
+      <li>
+        <div class="question">
+          <div class="question-title">
+            <span class="question-q">Q</span>
+            <span>질문할 게 있어요 서혁씨 몇시에 오실건가요</span>
+          </div>
+          <span class="downButton"><img th:src="@{/img/community-downButton.png}" alt=""></span>
+        </div>
+        <p class="answer">
+          <span class="answer-a">A</span>
+          <span>확신을 못하겠어요..</span>
+        </p>
+      </li>
+      <li>
+        <div class="question">
+          <div class="question-title">
+            <span class="question-q">Q</span>
+            <span>질문할 게 있어요 서혁씨 몇시에 오실건가요</span>
+          </div>
+          <span class="downButton"><img th:src="@{/img/community-downButton.png}" alt=""></span>
+        </div>
+        <p class="answer">
+          <span class="answer-a">A</span>
+          <span>확신을 못하겠어요..</span>
+        </p>
+      </li>
+      <li>
+        <div class="question">
+          <div class="question-title">
+            <span class="question-q">Q</span>
+            <span>질문할 게 있어요 서혁씨 몇시에 오실건가요</span>
+          </div>
+          <span class="downButton"><img th:src="@{/img/community-downButton.png}" alt=""></span>
+        </div>
+        <p class="answer">
+          <span class="answer-a">A</span>
+          <span>확신을 못하겠어요..</span>
+        </p>
+      </li>
+      <li>
+        <div class="question">
+          <div class="question-title">
+            <span class="question-q">Q</span>
+            <span>질문할 게 있어요 서혁씨 몇시에 오실건가요</span>
+          </div>
+          <span class="downButton"><img th:src="@{/img/community-downButton.png}" alt=""></span>
+        </div>
+        <p class="answer">
+          <span class="answer-a">A</span>
+          <span>확신을 못하겠어요..</span>
+        </p>
+      </li>
+    </ul>
+  </main>
+
+<footer th:replace="~{/basic/footer :: footer}"></footer>
+</body>
+</html>

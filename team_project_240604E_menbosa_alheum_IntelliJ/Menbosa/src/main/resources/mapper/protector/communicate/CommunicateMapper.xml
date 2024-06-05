@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.menbosa.mapper.protector.communicate.CommunicateMapper">
+    <!-- 소통 게시판 쿼리 -->
+    <!-- 첨부 파일 수정 안들어가있음 -->
+    <select id="selectCommuList" resultType="CommuListDto">
+
+        --------------------소통게시글 리스트 조회하기----------------
+        SELECT
+            B.BOARD_COMMU_NUM,
+            B.BOARD_COMMU_TITLE,
+            B.BOARD_COMMU_CONTENTS,
+            B.BOARD_COMMU_DATE,
+            M.PRO_MEM_NAME
+        FROM MBS_BOARD_COMMU B JOIN MBS_PRO_MEMBER M
+                                    ON B.PRO_MEM_NUM = M.PRO_MEM_NUM
+        ORDER BY B.BOARD_COMMU_DATE DESC
+    </select>
+
+    <insert id="insertCommu" parameterType="CommuWriteDto">
+        -------------소통 글쓰기----------
+        <selectKey keyProperty="boardCommuNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_BOARD_COMMU.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_BOARD_COMMU(BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_CONTENTS, BOARD_COMMU_DATE, PRO_MEM_NUM)
+        VALUES (#{boardCommuNum}, #{boardCommuTitle}, #{boardCommuContents}, SYSDATE, #{proMemNum})
+    </insert>
+
+    <select id="selectCommuDetail" parameterType="Long" resultType="CommuDetailDto">
+        ----------------소통 상세글 조회하기------------------------
+        SELECT
+            C.BOARD_COMMU_NUM,
+            C.BOARD_COMMU_TITLE,
+            C.BOARD_COMMU_CONTENTS,
+            C.BOARD_COMMU_DATE,
+            M.PRO_MEM_NAME,
+            F.FILE_USER
+        FROM MBS_BOARD_COMMU C
+                 LEFT JOIN MBS_PRO_MEMBER M
+                           ON C.PRO_MEM_NUM = M.PRO_MEM_NUM
+                 LEFT JOIN MBS_FILE F
+                           ON C.BOARD_COMMU_NUM = F.BOARD_COMMU_NUM
+        WHERE C.BOARD_COMMU_NUM = #{boardCommuNum}
+    </select>
+
+
+    <update id="updateCommu" parameterType="CommuUpdateDto">
+        -----------------소통 글 수정하기----------------------
+        UPDATE MBS_BOARD_COMMU
+        SET BOARD_COMMU_TITLE = #{boardCommuTitle},
+            BOARD_COMMU_CONTENTS = #{boardCommuContents}
+        WHERE BOARD_COMMU_NUM = #{boardCommuNum}
+    </update>
+
+    <delete id="deleteCommu" parameterType="Long">
+        ----------------소통 글 삭제하기-------------------
+        DELETE FROM MBS_BOARD_COMMU
+        WHERE BOARD_COMMU_NUM = #{boardCommuNum}
+    </delete>
+
+
+    <select id="selectMain" resultType="MainListDto">
+        SELECT ANNOUNCE_NUM,
+               ANNOUNCE_TITLE,
+               ANNOUNCE_DATE
+        FROM MBS_ANNOUNCE
+    </select>
+
+    <select id="selectByNum" parameterType="long" resultType="MainViewDto">
+        SELECT ANNOUNCE_NUM,
+               ANNOUNCE_TITLE,
+               ANNOUNCE_CONTENTS,
+               ANNOUNCE_DATE
+        FROM MBS_ANNOUNCE
+        WHERE ANNOUNCE_NUM = #{announceNum}
+    </select>
+
+
+
+
+
+    <select id="selectAllPage" parameterType="Criteria" resultType="CommuListDto">
+        <![CDATA[
+        SELECT BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_DATE ,PRO_MEM_NAME
+        FROM (
+                 SELECT ROWNUM AS RNUM, BOARD_COMMU_NUM, BOARD_COMMU_TITLE, BOARD_COMMU_DATE ,PRO_MEM_NAME
+                 FROM(
+                         SELECT B.BOARD_COMMU_NUM, B.BOARD_COMMU_TITLE, B.BOARD_COMMU_DATE , U.PRO_MEM_NAME
+                         FROM MBS_BOARD_COMMU B JOIN MBS_PRO_MEMBER U
+                                                     ON B.PRO_MEM_NUM = U.PRO_MEM_NUM
+                         ORDER BY BOARD_COMMU_NUM DESC
+                     )
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE RNUM > (#{page}-1) * #{amount}
+        ORDER BY BOARD_COMMU_DATE DESC
+        ]]>
+    </select>
+
+    <select id="selectTotal" resultType="int">
+        SELECT COUNT(BOARD_COMMU_NUM) FROM MBS_BOARD_COMMU
+    </select>
+
+
+    <select id="selectAllPageAnno" parameterType="Criteria" resultType="MainListDto">
+        --------------------- 공지 페이징처리 -------------------------------
+        <![CDATA[
+        SELECT ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+        FROM (
+                 SELECT ROWNUM AS RNUM, ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+                 FROM(
+                         SELECT ANNOUNCE_NUM, ANNOUNCE_TITLE, ANNOUNCE_DATE
+                         FROM MBS_ANNOUNCE
+                         ORDER BY ANNOUNCE_NUM DESC
+                     )
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE RNUM > (#{page}-1) * #{amount}
+        ORDER BY ANNOUNCE_DATE DESC
+        ]]>
+    </select>
+
+    <select id="selectTotalAnno" resultType="int">
+        SELECT COUNT(ANNOUNCE_NUM) FROM MBS_ANNOUNCE
+    </select>
+
+
+</mapper>

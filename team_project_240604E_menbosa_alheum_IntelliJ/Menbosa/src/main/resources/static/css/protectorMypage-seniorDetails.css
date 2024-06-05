@@ -1,0 +1,29 @@
+.senior-info-container-flex{
+  display: flex;
+}
+
+.senior-info-container-flex > article{
+  width: 40%;
+  min-width: fit-content;
+  height: 50px;
+  line-height: 30px;
+}
+
+.senior-info-container-flex > article span{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mypage-icon-user{
+  width: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 3px;
+}
+
+#senior-info-resultall-container{
+  border-radius: 0 10px 10px 10px;
+}
+#senior-info-resultall-title{
+  left : 7px;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.menbosa.mapper.senior.test.SenTestMapper">
+    <select id="selectSenTestList" resultType="SenTestListDTO">
+        ---[ ]  **SELECT** 시니어 검사리스트
+        SELECT TEST_LIST_NUM
+             , TEST_LIST_NAME
+             , TEST_LIST_DIFFI
+             , TEST_LIST_AGE
+        FROM MBS_TEST_LIST
+        ORDER BY TEST_LIST_NUM
+    </select>
+
+<!--    <select id="selectTestQuest" parameterType="Long" resultType="SenTestQDTO">-->
+<!--&#45;&#45; INDEX-->
+<!--        SELECT TEST_QUEST_NUM-->
+<!--            , TEST_QUEST_ORDER-->
+<!--            , TEST_QUEST_IMG-->
+<!--            , TEST_QUEST_ANSWER-->
+<!--        FROM MBS_TEST_QUESTION-->
+<!--        WHERE TEST_LIST_NUM = #{testListNum}-->
+<!--    </select>-->
+
+<!--    <select id="selectTestItems" parameterType="Long" resultType="SenTestItemDTO">-->
+<!--&#45;&#45; FOREACH-->
+<!--        SELECT TEST_ITEM_ONE-->
+<!--            , TEST_ITEM_TWO-->
+<!--            , TEST_ITEM_THREE-->
+<!--            , TEST_ITEM_FOUR-->
+<!--        FROM MBS_TEST_ITEMS I JOIN MBS_TEST_QUESTION Q-->
+<!--        ON I.TEST_QUEST_NUM = #{testQuestNum} AND Q.TEST_LIST_NUM = #{testListNum}-->
+<!--        AND I.TEST_QUEST_NUM = Q.TEST_QUEST_NUM-->
+<!--    </select>-->
+
+    <insert id="insertResult" parameterType="TestResultDTO">
+        <selectKey keyProperty="testResultNum" resultType="Long" order="BEFORE">
+            SELECT SEQ_TEST_RESULT.nextVal FROM DUAL
+        </selectKey>
+        INSERT INTO MBS_TEST_RESULT(TEST_RESULT_NUM, TEST_RESULT_DATE,TEST_RESULT_SCORE, SEN_MEM_NUM, TEST_LIST_NUM)
+        VALUES(#{testResultNum}, SYSDATE, #{testResultScore}, #{senMemNum}, #{testListNum})
+    </insert>
+
+    <select id="selectResult" parameterType="Long" resultType="TestResultDTO">
+        SELECT TEST_RESULT_NUM, TEST_RESULT_DATE, TEST_RESULT_SCORE, SEN_MEM_NUM, TEST_LIST_NUM
+        FROM (
+                 SELECT TEST_RESULT_NUM, TEST_RESULT_DATE, TEST_RESULT_SCORE, SEN_MEM_NUM, TEST_LIST_NUM,
+                        ROW_NUMBER() OVER (PARTITION BY SEN_MEM_NUM ORDER BY TEST_RESULT_DATE DESC) AS rn
+                 FROM MBS_TEST_RESULT
+                 WHERE SEN_MEM_NUM = #{senMemNum}
+             )
+        WHERE rn = 1
+    </select>
+</mapper>

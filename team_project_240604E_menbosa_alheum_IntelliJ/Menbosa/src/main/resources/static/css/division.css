@@ -1,0 +1,97 @@
+/* 기본 설정 */
+:root {
+  --font-color-default : #333;
+  --font-color-grey: #727272;
+  --font-color-white: #ffffff;
+  --color-main: #FE7A15;
+  --color-main-hover: #DF5427;
+  --color-disabled: #DCDCDC;
+  --color-sub-yell: #F8D90F;
+  --color-sub-yell-hover: #eba40c;
+  --color-sub-blue: #37BACC;
+  --color-sub-blue-hover: #0f9bad;
+  --color-sub-gree: #D3DD18;
+  --color-sub-gree-hover: #9dc001;
+  --color-gray: #8b8b8b;
+  --color-gray-hover: #686868;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: var(--font-color-default);
+  /* 텍스트긁기 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 구분 메인 */
+.division-container {
+  width: 970px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.division-textCnt p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #FE7A15;
+}
+
+.division-imgCnt {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.division-imgW,
+.division-imgM {
+  margin: 0 10px;
+}
+
+.division-imgW img,
+.division-imgM img {
+  width: 200px;
+  position: relative;
+  left: 50px;
+  top: 5px;
+}
+
+.division-imgW p,
+.division-imgM p {
+  text-align: center;
+  line-height: 200px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 20px;
+  color: white;
+  width: 300px;
+  height: 200px;
+}
+
+.division-imgW p {
+  background-color: var(--color-sub-blue);
+}
+
+.division-imgM p {
+  background-color: var(--color-main);
+}
+
+.division-imgM p:hover {
+  box-shadow: 0 0 4px 2px var(--color-main-hover);
+}
+
+.division-imgW p:hover {
+  box-shadow: 0 0 4px 2px var(--color-sub-blue-hover);
+}
