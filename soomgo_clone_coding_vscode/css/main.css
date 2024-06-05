@@ -1,0 +1,829 @@
+* {
+  /* 한지윤 */
+
+  /* <uniquifier>: Use a unique and descriptive class name*/
+  /* <weight>: Use a value from 100 to 900 */
+  /* .noto-sans-kr-<uniquifier>  */
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #737373;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+}
+
+/* 텍스트긁기 방지 */
+body { 
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+
+.img-round {
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: black;
+  display: block;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 25px;
+}
+
+h4{
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+h5{
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+b {
+  font-weight: 600;
+}
+
+li{
+  margin-bottom: 5px;
+}
+
+img{
+  border-radius: 8px;
+}
+
+
+/* ===========영역확인=============== */
+/* header white 지정 */
+
+/* header {
+  background-color: antiquewhite;
+}
+
+#searchmain {
+  background-color: rgb(248, 244, 238);
+}
+
+#main-banner{
+  background-color: burlywood;
+}
+
+#hot-service {
+  background-color: beige;
+}
+
+#communicatin {
+  background-color: rgb(255, 246, 232);
+}
+
+#gosu-portfolio {
+  background-color: rgb(245, 237, 237);
+}
+
+#app-soomgo{
+  background-color: blue;
+}
+
+#cleaning-day{
+  background-color: royalblue;
+}
+
+#hide-gosu{
+  background-color: navajowhite;
+}
+
+#gosu-story{
+  background-color: antiquewhite;
+}
+
+#new-consultant{
+  background-color: azure;
+}
+
+footer{
+  background-color: aliceblue;
+} */
+
+/* ================================ */
+
+/* 화살표 */
+.arrow-right{
+  position: absolute;
+  top : 30px;
+  right: -22px;
+  cursor: pointer;
+}
+
+.arrow-left{
+  /* display: none; */
+  position: absolute;
+  top: 30px;
+  left: -22px;
+  cursor: pointer;
+}
+
+/* #hot-service .arrow-left{
+  display: inline;
+} */
+
+#main-banner .arrow-left,
+#hot-service .arrow-left{
+  display: inline;
+}
+
+.arrow-right:hover, .arrow-left:hover{
+  transform: scale(1.05);
+}
+/*  */
+#hot-service .arrow-left,
+#hot-service .arrow-right{
+  top: 110px;
+}
+ 
+
+
+#cleaning-day .arrow-left, 
+#cleaning-day .arrow-right{
+  top: 114px;
+}
+
+#gosu-story .arrow-left, 
+#gosu-story .arrow-right{
+  top: 142px;
+}
+
+#gosu-portfolio .arrow-left, 
+#gosu-portfolio .arrow-right{
+  top: 150px;
+}
+
+
+/* 전체보기버튼 */
+.all-see{
+  color: #00c7ae;
+  font-weight: 600;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+#gosu-story .all-see{
+  bottom: 300px;
+}
+
+#gosu-portfolio .all-see{
+  bottom: 300px;
+}
+
+#communicatin .all-see{
+  bottom: 360px;
+}
+
+/* 헤더 */
+header{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+
+header {
+  width: 970px;
+  padding: 0 30px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-section{
+  display: flex;
+  width: auto;
+}
+
+.header--list01 {
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+}
+
+.header--text1 {
+  margin: 0 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(97, 97, 97);
+}
+
+.header--list02 {
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+  align-items: center;
+}
+
+.header--text02 {
+  margin: auto 8px;
+  color: rgb(58, 58, 58);
+}
+
+#headerbutton, .new-consultant-button {
+  background-color: #00c7ae;
+  padding: 7px 14px;
+  border-radius: 6px 6px;
+
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#headerbutton:hover, .new-consultant-button:hover{
+  transform: scale(0.975);
+  background-color: #0bdabe;
+  box-shadow: 0 0 12px rgb(0,199,174,0.4);
+}
+
+#header-search {
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  border: 0;
+  width: 320px;
+  height: 40px;
+  display: flex;
+  margin: auto auto;
+  justify-content: space-around;
+}
+
+/*  */
+main {
+  width: 970px;
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+/*  */
+
+#searchmain {
+  height: 200px;
+  margin-top: 50px;
+  position: relative;
+}
+
+#searchmain-search {
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  border: 0;
+  width: 540px;
+  height: 40px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+#search {
+  background-color: rgb(255, 255, 255, 0);
+  border: 0;
+  width: 500px;
+  outline: none;
+}
+
+.search-list {
+  margin-top: 25px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-list-li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-dropmenu{
+  position: absolute;
+  left: 216px;
+  top: 126px;
+  width: 516px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 6px 1px rgb(0,0,0,0.2);
+  padding: 10px;
+  /* list-style-type: none; */
+  display: none;
+  z-index: 10000000000;
+}
+.search-tab-top span{
+  display: inline-block;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-tab-top{
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.search-tab-bottom{
+  border-top: 1px solid #f1f1f1;
+  padding-top: 10px;
+}
+
+.search-tab-bottom p:not(.search-close){
+  visibility: hidden;
+  cursor: pointer;
+  /* visibility: visible; */
+}
+
+.search-close{
+  cursor: pointer;
+}
+
+.search-tab li{
+  list-style: none;
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.search-tab li:hover{
+  background-color: #f8f8f8;
+}
+
+.no-searchlist{
+  text-align: center;
+}
+
+.search-tab{
+  list-style: none;
+  height: 250px;
+  width : 100%;
+  overflow-y: scroll;
+  display: flex;
+}
+
+.search-tab ul, .search-tab div{
+  width : 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+}
+
+
+.search-tab-top, .search-tab-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  */
+#main-banner{
+  height: 110px;
+  margin-top: 76px;
+  position: relative;
+}
+
+.banner-over{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+
+.imglong{
+  width: 970px;
+  /* margin-right: 2px; */
+}
+
+#main-banner span{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  /* border: 1px solid red; */
+}
+
+/*  */
+#hot-service {
+  height: 300px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.hot-service-list, .gosu-portfolio-list,
+.gosu-story-list, .cleaning-day-list {
+  position: relative;
+  overflow: hidden;
+}
+
+.hot-slide, .gosu-imgcontainer,
+.story-imgcontainer, .cleaning-day-imgcontainer{
+  display: flex;
+  position: relative;
+  /* left: -496px; */
+  /* left: -992px; */
+  left: 0;
+
+}
+
+.hot-slide a, .gosu-imgcontainer li,
+.cleaning-day-imgcontainer a{
+  margin-right: 20px;
+}
+
+.story-imgcontainer a{
+  margin-right: 18px;
+}
+
+.hot-text{
+  color: #323232;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.commu-text{
+  color: #323232;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hot-text-small{
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+}
+
+/*  */
+#communicatin {
+  height: 400px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.commu-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.commu-part1{
+  width: 470px;
+}
+
+#communicatin img{
+  margin: auto;
+}
+
+.part1-post{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding-bottom: 12px;
+  padding-top: 8px;
+}
+
+.commu-part2{
+  width: 475px;
+}
+
+.part2-post{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.part2-post-text{
+  margin-left: 10px;
+  width: 235px;
+}
+
+/*  */
+#gosu-portfolio {
+  height: 320px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.gosu-portfolio-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.gosu-port-text{
+  font-size: 12px;
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.gosu-imgbox{
+  width: 228px;
+  height: 228px;
+  border-radius: 8px;
+  background-color: #00c7ae;
+  overflow: hidden;
+}
+.gosu-imgbox img{
+  transition-duration: 0.5s;
+}
+
+.gosu-imgbox img:hover{
+  transform: scale(1.07);
+  
+}
+
+
+/*  */
+#app-soomgo{
+  height: 94px;
+  margin-top: 50px;
+}
+
+/*  */
+
+#cleaning-day{
+  height: 250px;
+  margin-top: 50px;
+  position: relative;
+}
+
+/*  */
+
+#hide-gosu{
+  height: 130px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hide-text-box{
+  width: 170px;
+  /* border: 4px solid #00c7ae; */
+}
+
+.hide-button-container{
+  display: flex;
+  width: 680px;
+  /* border: 4px solid #00c7ae; */
+  flex-wrap: wrap;
+
+}
+
+#gosu-story .hot-text{
+  margin-left: 2px;
+  margin-top: 5px;
+  width: 310px;
+}
+
+.hide-button{
+  width: 60px;
+  height: 35px;
+  margin: 0 15px 15px 0;
+  text-align: center;
+  line-height: 35px;
+  background-color: #EAFAF7;
+  color: #00c7ae;
+  border-radius: 20px;
+}
+
+.hide-button:hover{
+  background-color: #00c7ae;
+  color: white;
+}
+
+/*  */
+#gosu-story{
+  height: 350px;
+  margin-top: 50px;
+  position: relative;
+}
+
+
+/*  */
+
+#new-consultant{
+  height: 450px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.consultant-imgbox{
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  width: 660px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-consultant-button{
+  width: 120px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+}
+
+
+.img-text{
+  margin: 10px auto;
+  text-align: center;
+  display: flex;
+  position: relative;
+  /* left: 0px; */
+  left: -660px;
+}
+
+.text-box{
+  padding: 0 170px;
+  height: 400px;
+  /* background-color: #00c7ae; */
+  margin-left: 10px;
+  position: relative;
+}
+
+.img-text p{
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.new-right, .new-left{
+  position: absolute;
+  font-size: 60px;
+  top: 120px;
+  color: #dbdbdb;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* .new-right:hover, .new-left:hover{
+  color: #737373;
+} */
+
+.new-right{
+  right: 40px;
+}
+
+.new-left{
+  left: 40px;
+}
+
+.dot-select{
+  display: flex;
+  position: absolute;
+  bottom: 90px;
+  left: 300px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.dot1, .dot2, .dot3{
+  font-size: 10px;
+  margin: 0 4px;
+  color: #dbdbdb;
+}
+
+/*  */
+/*  */
+
+footer hr {
+  border: 1px 0 0 0 solid rgb(236, 236, 236, 0.5);
+}
+
+footer {
+  /* background-color: aliceblue; */
+
+  width: 970px;
+  margin: 5px auto;
+  height: 400px;
+  /* margin: 10px 14px; */
+}
+
+.footer-first {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerbutton {
+  margin: 30px 10px 0 0;
+  padding: 8px 10px;
+  width: 110px;
+
+  background-color: #00c7ae;
+  border-radius: 22px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerbutton-text {
+  font-weight: 500;
+  font-size: 12px;
+  color: white;
+  margin: 0 8px;
+  text-align: center;
+}
+
+#footer-company {
+  font-size: 12px;
+}
+
+.footer-company-list {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+#footer-sns {
+  width: 200px;
+  margin: auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-terms {
+  margin-right: 30px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer-list-container {
+  margin: 20px 0 0 200px ;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  width: 400px;
+  /* background-color: #00c7ae; */
+}
+
+.footer-list {
+  list-style-type: none;
+}
+
+.point {
+  margin: 15px 0 5px 0;
+  color: #00c7ae;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.footer-text-caution{
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+
+/* 임시 블록 */
+
+
+.listnone {
+  list-style-type: none;
+}
+
+.listcol {
+  /* background-color: #00C7AE; */
+  display: flex;
+  width: 200px;
+}
+.col {
+  display: flex;
+}
+
+.coljust {
+  display: flex;
+  justify-content: space-between;
+}
+

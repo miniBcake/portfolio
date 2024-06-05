@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숨고:카피연습-login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script defer src="js/login.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <section id="white">
+      <section class="header-section">
+        <a href="main.html"
+          ><img
+            src="./soomgo_source/숨고로고.svg"
+            alt="숨고"
+            style="margin: 15px 20px 0 0"
+            width="80px"
+        /></a>
+        <ul class="header--list01">
+          <a href="#" class="header--text1">견적요청</a>
+          <a href="#" class="header--text1">고수찾기</a>
+          <a href="#" class="header--text1">마켓</a>
+          <a href="#" class="header--text1">커뮤니티</a>
+        </ul>
+      </section>
+      <section id="header-search">
+        <img
+          src="./soomgo_source/검색용 돋보기.svg"
+          alt="돋보기"
+          width="20px"
+          style="margin: 0 10px"
+        />
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="어떤 서비스가 필요하세요?"
+        />
+      </section>
+      <ul class="header--list02">
+        <a href="login.html"><li class="header--text02">로그인</li></a>
+        <a href="join.html"><li class="header--text02">회원가입</li></a>
+        <a href="#"
+          ><li class="header--text02" id="headerbutton">고수가입</li></a
+        >
+      </ul>
+      </section>
+    </header>
+
+    <!-- 메인 -->
+    <main>
+      <section id="login">
+        <div id="login-main-text">로그인</div>
+
+        <section class="login-main-box">
+          <div class="login-container">
+            <form action="" method="">
+              <fieldset>
+                <ul>
+                  <div id="email-box">
+                    <label for="email">이메일 </label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="example@soomgo.com"
+                      required
+                    />
+                  </div>
+                  <div id="password-box">
+                    <label for="password">비밀번호</label>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="비밀번호를 입력해주세요"
+                      required
+                    />
+                  </div>
+                  <input
+                    class="login-button"
+                    type="submit"
+                    value="이메일 로그인"
+                  />
+                </ul>
+              </fieldset>
+            </form>
+
+            <div class="findmy">
+              <a href="#">이메일 찾기</a>
+              <hr />
+              <a href="#">비밀번호 찾기</a>
+              <hr />
+              <a href="join.html">회원가입</a>
+            </div>
+          </div>
+
+          <div class="sns-container">
+            <div class="button-box kakao">
+              <a href="#">
+                <img src="./soomgo_source/카카오톡이미지.svg" width="20px" />
+                <span>카카오로 시작</span>
+              </a>
+            </div>
+            <div class="button-box naver">
+              <a href="#">
+                <img src="./soomgo_source/네이버이미지.svg" width="20px" />
+                <span>네이버로 시작</span>
+              </a>
+            </div>
+            <div class="button-box facebook">
+              <a href="#">
+                <img src="./soomgo_source/페이스북이미지.svg" width="20px" />
+                <span>페이스북으로 시작</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <hr id="footerhr" />
+    <footer>
+      <section class="footer-first">
+        <div id="footer-1599-5319">
+          <p class="point">1599-5319</p>
+          <div>
+            평일 10:00 - 18:00<br />(점심시간 13:00 - 14:00 제외·주말/공휴일
+            제외)
+            <div class="col">
+              <a href=""
+                ><div class="footerbutton">
+                  <img
+                    src="./soomgo_source/icon-download-appstore.svg"
+                    alt="애플스토어"
+                  />
+                  <span class="footerbutton-text">APP STORE</span>
+                </div></a
+              >
+              <a href=""
+                ><div class="footerbutton">
+                  <img
+                    src="./soomgo_source/icon-download-palystore.svg"
+                    alt="플레이스토어"
+                  />
+                  <span class="footerbutton-text">PLAY STORE</span>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <section class="footer-list-container">
+          <ul class="footer-list">
+            <a href="#"
+              ><li><b>숨고소개</b></li></a
+            >
+            <a href="#"><li>회사소개</li></a>
+            <a href="#"><li>채용안내</li></a>
+            <a href="#"><li>팀블로그</li></a>
+          </ul>
+          <ul class="footer-list">
+            <a href="#"
+              ><li><b>고객안내</b></li></a
+            >
+            <a href="#"><li>이용안내</li></a>
+            <a href="#"><li>안전정책</li></a>
+            <a href="#"><li>예상금액</li></a>
+            <a href="#"><li>고수찾기</li></a>
+            <a href="#"><li>숨고보증</li></a>
+            <a href="#"><li>고수에게묻다</li></a>
+          </ul>
+          <ul class="footer-list">
+            <a href="#"
+              ><li><b>고수안내</b></li></a
+            >
+            <a href="#"><li>이용안내</li></a>
+            <a href="#"><li>고수가이드</li></a>
+            <a href="#"><li>고수가입</li></a>
+          </ul>
+          <ul class="footer-list">
+            <a href="#"
+              ><li><b>고객센터</b></li></a
+            >
+            <a href="#"><li>공지사항</li></a>
+            <a href="#"><li>자주묻는질문</li></a>
+          </ul>
+        </section>
+      </section>
+
+      <br />
+
+      <section class="coljust">
+        <section id="footer-company">
+          <div class="footer-company-list">
+            <a href="#"><div class="footer-terms">이용약관</div></a>
+            <a href="#"><div class="footer-terms">개인정보처리방침</div></a>
+            <a href="#"
+              ><div class="footer-terms">위치기반 서비스 이용약관</div></a
+            >
+            <a href="#"><div class="footer-terms">사업자 정보확인</div></a>
+          </div>
+          <p class="footer-text-caution">
+            (주)브레이브모바일은 통신판매중개자로서 통신판매의 당사자가 아니며
+            개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한<br />
+            의무와 책임은 거래당사자에게 있습니다.
+          </p>
+          <p class="footer-text-caution">
+            상호명:(주)브레이브모바일 · 대표이사:KIM ROBIN H ·
+            개인정보책임관리자:김태우 · 주소:서울특별시 강남구 테헤란로 415, L7
+            강남타워 5층<br />
+            사업자등록번호:120-88-22325 · 통신판매업신고증:제
+            2021-서울강남-00551 호 · 직업정보제공사업 신고번호:서울청 제
+            2019-21호<br />
+            고객센터:1599-5319 · 이메일:support@soomgo.com<br />
+            Copyright ©Brave Mobile Inc. All Rights Reserved.
+          </p>
+        </section>
+
+        <section id="footer-sns">
+          <a href="#"
+            ><img
+              src="./soomgo_source/icon-footer-sns-facebook.svg"
+              alt="페이스북"
+          /></a>
+          <a href="#"
+            ><img
+              src="./soomgo_source/icon-footer-sns-instagram.svg"
+              alt="인스타그램"
+          /></a>
+          <a href="#"
+            ><img
+              src="./soomgo_source/icon-footer-sns-naverblog.svg"
+              alt="네이버블로그"
+          /></a>
+          <a href="#"
+            ><img
+              src="./soomgo_source/icon-footer-sns-naverpost.svg"
+              alt="네이버포스트"
+          /></a>
+          <a href="#"
+            ><img
+              src="./soomgo_source/icon-footer-sns-tistory.svg"
+              alt="티스토리"
+          /></a>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

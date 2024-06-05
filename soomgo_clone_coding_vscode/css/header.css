@@ -1,0 +1,119 @@
+* {
+  /* 한지윤 */
+
+  /* <uniquifier>: Use a unique and descriptive class name*/
+  /* <weight>: Use a value from 100 to 900 */
+  /* .noto-sans-kr-<uniquifier>  */
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #737373;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+li{
+  margin-bottom: 5px;
+}
+
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+
+  position: sticky;
+  top: 0;
+}
+
+
+
+header{
+  /* position: sticky;
+  top: 0; */
+  /* background-color: white; */
+  z-index: 1000;
+}
+
+
+#white {
+  width: 970px;
+  /* padding: 0 30px; */
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-section{
+  display: flex;
+  width: auto;
+}
+
+.header--list01 {
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+}
+
+.header--text1 {
+  margin: 0 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(97, 97, 97);
+}
+
+.header--list02 {
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+  align-items: center;
+}
+
+.header--text02 {
+  margin: auto 8px;
+  color: rgb(58, 58, 58);
+}
+
+#headerbutton {
+  background-color: #00c7ae;
+  padding: 7px 14px;
+  border-radius: 6px 6px;
+
+  color: white;
+  font-weight: 500;
+}
+
+#headerbutton:hover, .new-consultant-button:hover{
+  transform: scale(0.975);
+  background-color: #0bdabe;
+  box-shadow: 0 0 12px rgb(0,199,174,0.4);
+}
+
+#header-search {
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  border: 0;
+  width: 320px;
+  height: 40px;
+  display: flex;
+  margin: auto auto;
+  justify-content: space-around;
+}
+
+#search {
+  background-color: rgb(255, 255, 255, 0);
+  border: 0;
+  width: 500px;
+}

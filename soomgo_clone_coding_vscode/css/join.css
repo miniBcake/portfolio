@@ -1,0 +1,158 @@
+
+main{
+  background-color: rgb(250, 250, 250);
+}
+
+.down a{
+  text-decoration: underline;
+}
+
+#join{
+  padding: 80px 0;
+  width: 970px;
+  margin: 0 auto;
+}
+
+#join-main-text{
+  font-size: 34px;
+  color: #323232;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+.join-main-box{
+  width: 410px;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border: 1px solid rgb(226, 226, 226,0.5);
+  border-radius: 8px;
+
+}
+
+
+.join-container{
+  width: 340px;
+  /* height: 395px; */
+  margin: 0 auto;
+  padding-top: 30px;
+  /* background-color: #323232; */
+}
+
+ul div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.terms-checks div{
+  margin-bottom: 0;
+}
+
+.join-container label{
+  font-weight: 600;
+  font-size: 16px;
+  color: #686868;
+  margin-bottom: 10px;
+}
+
+.down label{
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  width: 306px;
+  margin: 12px 0;
+}
+
+.terms-all-container label{
+  display: inline-block;
+  width: 306px;
+  margin: 12px 0;
+}
+
+
+fieldset{
+  border: none;
+}
+
+#join ul input{
+  border: 1px solid rgb(226, 226, 226);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 5px 0;
+  outline: none;
+}
+
+
+input::placeholder{
+  font-size: 14px;
+  color: rgb(177, 177, 177);
+}
+
+
+.join-button{
+  border: none;
+  background-color: #00C7AE;
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  height: 50px;
+  /* border-radius: 6px; */
+  line-height: 14px;
+}
+
+.join-button:hover{
+  background-color: #029E87;
+}
+
+.terms-checks div{
+  display: inline-block;
+}
+
+.terms-checks{
+  margin-bottom: 16px;
+}
+
+label span{
+  color: #B5B5B5;
+}
+
+main hr{
+  margin: 10px 0;
+  border-bottom: 1px solid rgb(192, 192, 192,0.3);
+}
+
+.gosu{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 14px;
+}
+
+
+
+/* 체크박스 변경 */
+
+input.terms, input#terms-all{
+  width:22px;
+  height:22px;
+  vertical-align:middle;
+} 
+
+/* input#terms:checked + .test, input#terms-all:checked + .test{
+  display:inline-block; 
+  width:24px;
+  height:24px;
+  border-radius: 2px;
+  vertical-align:middle;
+}  */
+  
+
+/* 약관전체동의 밑에 */
+/* #join hr{
+  border: 1px soild #B4B4B4;
+} */

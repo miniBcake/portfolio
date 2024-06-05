@@ -1,0 +1,158 @@
+
+main{
+  background-color: rgb(250, 250, 250);
+}
+
+#login{
+  padding: 80px 0;
+  width: 970px;
+  margin: 0 auto;
+}
+
+#login-main-text{
+  font-size: 34px;
+  color: #323232;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+.login-main-box{
+  width: 410px;
+  height: 644px;
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid rgb(226, 226, 226,0.5);
+  border-radius: 8px;
+
+}
+
+.login-container{
+  width: 340px;
+  height: 395px;
+  margin: 0 auto;
+  padding-top: 30px;
+  /* background-color: #323232; */
+}
+
+ul div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#login label{
+  font-weight: 600;
+  font-size: 16px;
+  color: #686868;
+  margin-bottom: 10px;
+}
+
+fieldset{
+  border: none;
+}
+
+#email, #password{
+  border: 1px solid rgb(226, 226, 226);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 5px 0;
+  outline: none;
+}
+
+/* #email:focus, #password:focus{
+  box-shadow: 0 0 0px 4px rgb(0,199,174,0.2);
+} */
+
+
+input::placeholder{
+  font-size: 14px;
+  color: rgb(177, 177, 177);
+}
+
+.findmy{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#login hr{
+  margin: 0px 20px;
+  border-left: 1px solid #b4b4b47e;
+}
+
+.login-button{
+  border: none;
+  background-color: #00C7AE;
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  height: 50px;
+  /* border-radius: 6px; */
+  line-height: 14px;
+  /* margin: 0 0; */
+}
+
+.sns-container{
+  width: 340px;
+  height: 200px;
+  margin: 0 auto;
+
+  /* background-color: #00C7AE; */
+  
+}
+
+.button-box{
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button:hover{
+  background-color: #029E87;
+}
+
+.button-box span{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.button-box img{
+  margin: -4px 5px -4px 0;
+}
+
+
+.kakao{
+  background-color: #FEE500;
+}
+
+.kakao span{
+  color: #323232;
+}
+
+.kakao:hover{
+  background-color: #CEB500;		
+}
+
+.naver{
+  background-color: #03C75A;
+}
+
+.naver:hover{
+  background-color: #05A044;
+}
+
+.facebook{
+  background-color: #1876F2;
+}
+
+.facebook:hover{
+  background-color: #1863B5;
+}
