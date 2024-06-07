@@ -23,7 +23,7 @@ public class SmsController {
     public SmsController(MypageService mypageService) {
         this.mypageService = mypageService;
         // 반드시 계정 내 등록된 유효한 API 키, API Secret Key를 입력해주셔야 합니다!
-        this.messageService = NurigoApp.INSTANCE.initialize("NCSPOHDCMRBTVPM6", "E8CC6OBRIR12YC1NVQGMHPQWBUC5PRT5", "https://api.coolsms.co.kr");
+        this.messageService = NurigoApp.INSTANCE.initialize("api", "api Secret Key", "https://api.coolsms.co.kr");
     }
 
     @PostMapping("/send-one")
