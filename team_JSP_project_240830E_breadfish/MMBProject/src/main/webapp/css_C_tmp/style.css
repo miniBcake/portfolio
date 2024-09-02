@@ -1,0 +1,474 @@
+/********** Template CSS **********/
+:root {
+    --primary: #D2691E;
+    --light: #F3F6F9;
+    --dark: #191C24;
+}
+
+/* 특정 컨테이너 내에서만 스타일 적용 */
+.new-members-table-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 테이블 스타일 */
+.new-members-table-container table {
+    width: auto; /* 내용에 맞게 테이블 크기 조정 */
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--light); /* 테이블 배경색 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 테이블 헤더 스타일 */
+.new-members-table-container thead {
+    background-color: var(--dark); /* 어두운 헤더 배경색 */
+}
+
+.new-members-table-container th, 
+.new-members-table-container td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    color: var(--dark); /* 텍스트 색상을 어두운 색으로 */
+}
+
+/* 테이블 행 배경색 교차 */
+.new-members-table-container tbody tr:nth-child(even) {
+    background-color: var(--light); /* 밝은 행 배경색 */
+}
+
+/* 테이블 행 마우스 오버 시 색상 변경 */
+.new-members-table-container tbody tr:hover {
+    background-color: #e1e1e1; /* 밝게 변경된 마우스 오버 색상 */
+}
+
+/* 테이블 헤더 텍스트 스타일 */
+.new-members-table-container th {
+    background-color: var(--primary); /* 주황색 헤더 배경 */
+    color: white; /* 흰색 텍스트 */
+}
+
+/* 테이블 셀 내 링크 스타일 */
+.new-members-table-container a {
+    color: var(--primary); /* 링크 색상 주황색 */
+    text-decoration: none;
+}
+
+.new-members-table-container a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+.primary-heading{
+	color:var(--primary);
+	/* 붕어빵 색상을 변수에 적용*/
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+/*마이페이지*/
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    padding: 20px;
+}
+
+.profile-container {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.profile-info {
+    margin-left: 30px;
+}
+
+.profile-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    padding: 8px 16px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-edit:hover {
+    background-color: #fafafa;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-stats span {
+    font-size: 16px;
+}
+
+.profile-stats strong {
+    font-weight: bold;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 세로로 3개의 컬럼 구성*/
+    gap: 10px;
+}
+
+.post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+.btn-primary{
+	background-color : var(--primary);
+	border-color : var(--primary);
+}
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+/* 모달 스타일 */
+        .modal {
+            display: none; /* 숨김 상태로 시작 */
+            position: fixed; /* 화면 고정 */
+            z-index: 1000; /* 최상위 레벨 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* 스크롤 가능 */
+            background-color: rgba(0,0,0,0.5); /* 반투명 배경 */
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto; /* 가운데 정렬 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px; /* 최대 너비 */
+            border-radius: 10px; /* 모서리 둥글게 */
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .modal-body {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+/*** Layout ***/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--light);
+    transition: 0.5s;
+    z-index: 999;
+}
+
+.content {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: #FFFFFF;
+    transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 250px);
+    }
+
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 7px 20px;
+    color: var(--dark);
+    font-weight: 500;
+    border-left: 3px solid var(--light);
+    border-radius: 0 30px 30px 0;
+    outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+    background: #FFFFFF;
+    border-color: var(--primary);
+}
+
+.sidebar .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover i,
+.sidebar .navbar .navbar-nav .nav-link.active i {
+    background: var(--light);
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+    padding-left: 25px;
+    border-radius: 0 30px 30px 0;
+}
+
+.content .navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 12px 0;
+    color: var(--dark);
+    outline: none;
+}
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 575.98px) {
+    .content .navbar .navbar-nav .nav-link {
+        margin-left: 15px;
+    }
+}
+
+
+/*** Date Picker ***/
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.progress .progress-bar {
+    width: 0px;
+    transition: 2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--dark);
+    border-color: var(--primary);
+}
