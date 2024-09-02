@@ -12,6 +12,6 @@ https://github.com/miniBcake/clone_coding.git <br>
 ---
 ## (디지털컨버전스)임베디드 소프트웨어 융합 풀스택 개발자 양성 과정B
 
-- team project 중간프로젝트의 중간프로젝트 / team_JSP_project_240830E_breadfish
-  (JSP프로젝트, oracle DB. ecilpse / html, css, javascript, jquery, ajax, El, JSTL 등)
+- team project 중간프로젝트의 중간프로젝트 / team_JSP_project_240830E_breadfish <br>
+  (JSP프로젝트, oracle DB. ecilpse / html, css, javascript, jquery, ajax, El, JSTL 등) <br>
   담당 파트 : Model 파트장 / 담당 파트 정리글 : https://minibcake.tistory.com/196
