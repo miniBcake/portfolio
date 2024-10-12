@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-22">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/resource/ojdbc6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v10.1"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/commons-codec-1.17.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/commons-compress-1.26.2.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/commons-io-2.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/commons-lang3-3.15.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/dec-0.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/docker-java-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/docker-java-api-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/docker-java-core-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/docker-java-transport-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/docker-java-transport-httpclient5-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/error_prone_annotations-2.27.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/httpclient5-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/httpcore5-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/httpcore5-h2-5.2.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/jackson-annotations-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/jackson-core-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/jackson-databind-2.10.3.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/jcl-over-slf4j-1.7.30.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/jna-5.13.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/selenium-server-4.24.0.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/slf4j-api-2.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/resource/셀레니움크롤링buildpath파일/webdrivermanager-5.9.2.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

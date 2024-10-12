@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+			/* 페이지네이션 컨테이너 스타일 */
+			.pagination {
+				display: flex;
+				justify-content: center; /* 중앙 정렬 */
+				margin: 20px 0; /* 상하 여백 */
+			}
+			
+			.pagination a, .pagination strong {
+				display: inline-block;
+				padding: 10px 20px; /* 버튼 크기 조절 */
+				margin: 0 5px; /* 버튼 간격 조절 */
+				text-decoration: none;
+				color: #333;
+				background-color: #f4f4f4;
+				border: 1px solid #ddd;
+				border-radius: 5px; /* 버튼 둥글게 */
+				transition: background-color 0.3s, color 0.3s;
+			}
+			
+			.pagination a:hover {
+				background-color: #ddd; /* 버튼 호버 시 색상 */
+			}
+			
+			.pagination strong {
+				background-color: #333; /* 현재 페이지 버튼 색상 */
+				color: #fff;
+				border: none;
+			}
+			
+			/* 검색 필터 스타일 */
+			#search-section {
+			    margin: 20px 0;
+			}
+			
+			.search-container {
+			    display: flex;
+			    align-items: center;
+			    gap: 10px; /* 요소 간 간격 */
+			}
+			
+			.filter-select, .search-input, .search-button {
+			    padding: 10px;
+			    border-radius: 5px;
+			    border: 1px solid #ddd;
+			    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+			}
+			
+			.filter-select {
+			    flex: 1;
+			}
+			
+			.search-input {
+			    flex: 2;
+			}
+			
+			.search-button {
+			    background-color: #333;
+			    color: #fff;
+			    border: none;
+			    cursor: pointer;
+			    transition: background-color 0.3s, color 0.3s;
+			}
+			
+			.search-button:hover {
+			    background-color: #555;
+			}
+			
+			/* 검색 필터 레이블 스타일 */
+			label {
+			    font-weight: bold;
+			    margin-right: 10px;
+			}
+			
+			/* 댓글 작성 섹션 스타일 */
+			#reply-section {
+			    margin: 20px 0; /* 상하 여백 */
+			}
+			
+			#reply-section header {
+			    padding: 20px;
+			    background-color: #f9f9f9;
+			    border: 1px solid #ddd;
+			    border-radius: 8px;
+			    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+			
+			#reply-section h2, #reply-section h3 {
+			    margin-bottom: 15px;
+			}
+			
+			#reply-section textarea {
+			    width: 100%;
+			    padding: 12px;
+			    border: 1px solid #ddd;
+			    border-radius: 5px;
+			    font-size: 16px;
+			    resize: vertical; /* 세로로만 크기 조절 가능 */
+			    box-sizing: border-box; /* padding과 border를 포함한 총 크기 계산 */
+			    margin-bottom: 15px; /* 버튼과의 간격 */
+			    transition: border-color 0.3s;
+			}
+			
+			#reply-section textarea:focus {
+			    border-color: #333;
+			    outline: none;
+			}
+			
+			#reply-section button {
+			    width: 100%;
+			    padding: 12px;
+			    border: none;
+			    border-radius: 5px;
+			    background-color: #333;
+			    color: #fff;
+			    font-size: 16px;
+			    cursor: pointer;
+			    transition: background-color 0.3s;
+			}
+			
+			#reply-section button:hover {
+			    background-color: #555;
+			}
+			
+			
+			
+			/* 댓글 수정 박스 스타일 */
+textarea#edit-comment-text {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* 댓글 수정 버튼 스타일 */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* 댓글 박스 숨김 처리 */
+#edit-comment-box {
+    display: none;
+}
+
+
+
+
+
+
+
+
